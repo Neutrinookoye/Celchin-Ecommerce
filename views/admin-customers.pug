@@ -1,0 +1,77 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper  
+                  div.wrap
+                    div.wrap-12-6.wrap-12
+                      h3 Welcome to Customer Manager   
+                      if customers.length > 0 
+                        .table-responsive.prodd
+                          table(class="table table-bordered") 
+                            thead 
+                              tr 
+                                th S/N 
+                                th Customer Name 
+                                th Email 
+                                th Phone Number  
+                                th WhatsApp 
+                                th Action  
+                            tbody 
+                              each customer , i in customers 
+                                tr 
+                                  td #{i + 1} 
+                                  td(class="input-border-faint customerName" data-identifier=customer._id) #{customer.name} 
+                                  td(class="input-border-faint customerEmail") #[a(href=`mailto:${customer.email}`) #{customer.email}] 
+                                  td(class="input-border-faint customerMobile")   #[a(href=`tel:${customer.phoneNumber}`) #{customer.phoneNumber}] 
+                                  td #[a(href=`https://wa.me/${customer.phoneNumber}` target="_blank") Chat ]
+                                  td #[input(type="checkbox"  class="input input-border-faint check")] 
+                        button(class="bg-red button no-border no-outline white-text m-r-1 m-b-1" id="removeCustomer") Remove 
+                        button(class="bg-green button no-border no-outline white-text" id="editCustomer") Edit
+                      else
+                        h3 No customers saved yet.
+                  div.wrap-md-6.wrap-12
+                      section(id="clearance-form")
+                        a(href="#" class="fixed-to-bottom modal-trigger" ) 
+                          i(class="fa fa-plus circle-content shadow") 
+                        div(class="modal w-100 h-100  z-index-overall   top-0 left-0  wrapper") 
+                          div(class="modal-content wrap-md-4 center-box" data-modal-content-distance-from-top="5" data-modal-content-width="90") 
+                            span(class="close both-hover-with-focus") &times;
+                            form(class="shadow pad-20 m-b-2 bg-white bold-350 font-1 radius-5" action="" method="post" )
+                              h3.center-tex Add a new customer 
+                              label(for="name" class="label") Company Name  
+                              input(type="text" class="input validate pad-input input-m-b-1 input-border-faint" name="name" id="name" required) 
+                              label(for="contact person" class="label") Contact Person   
+                              input(type="tel" class="input validate pad-input input-m-b-1 input-border-faint" name="contactPerson" id="contactPerson" required) 
+                              label(for="phone" class="label") Phone   
+                              input(type="tel" class="input validate pad-input input-m-b-1 input-border-faint" name="phone" id="phone" required)
+                              label(for="email" class="label") Email
+                              input(type="email" class="input validate pad-input input-m-b-1 input-border-faint" name="email" id="email" required)
+                               
+                              label(for="Address" class="label") Address 
+                              textarea(class="input validate pad-input input-m-b-1 input-border-faint" name="address" id="address" required)
+                              input(type="submit" class="input validate pad-input  input-border-faint bg-dodgerblue white-text" value="Proceed")
+                    
+            
+    script(src="/js/customermanager.js" type="module") 
+    script(src="/js/easyframer.js")
+    script(src="/js/transactionmanager.js" type="module")
+
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")
+  

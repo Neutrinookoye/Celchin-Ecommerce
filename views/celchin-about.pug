@@ -1,0 +1,69 @@
+include includes/celchin-header.pug  
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;") 
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-list-alt")] About #[span.orange-text Celchin #[i(class=" fa fa-angle-right")]]
+                p At Celchin, we are specialists in power rentals, emergency power systems of all sizes and output, 
+                  | for any scenario from a small generator or solar running 1 item to a shopping Centre, 
+                  | Manufacturers, Companies, hospital or large office development. We tailor all systems to your 
+                  | individual requirements and offer a range of quality new, fairly used generators, solar panels 
+                  | and accessories from well-known manufacturers around the globe. 
+                p Our experienced team can advise 
+                  |  on the generator size, solar package, location and other requirements. Whilst our services and 
+                  | products are of the highest standards and quality, our prices are typically 20% cheaper than many 
+                  | of our rivals. Whatever your back-up power requirement is, you can be sure that Celchin Nigeria 
+                  |  Limited will provide a tailored, quality solution at a price that others can’t match. 
+                p 
+                  | For those organizations who have a requirement for an emergency power solution, but find that the 
+                  | cost of purchasing, installing and maintaining a generator or solar system can be prohibitive, 
+                  | we have developed our Emergency Power Plan which is a cost effective way of restoring power within
+                  |  a short period of time. No matter how small or how large your project is, we will be too happy 
+                  | to assist. You run your business, we power it for you. 
+                
+                div.hide.hidden-div.wow.slideInUp
+                  p Celchin Rental can help you get the job done, eliminate blackout as when you need it. 
+                    | We only work with leading manufacturers of high quality diesel-fueled engines, gas engines, 
+                    | solar panels, inverter, batteries, including Cummins, JCB, Perkins, CAT, Stamford, Scania, 
+                    | John Deere and Volvo.
+                  p Our fuel monitoring devices allows getting reliable and accurate information on current fuel volume 
+                    | in the tank and to reveal misuse and fuel theft from tank.  Also gives a general overview on fuel 
+                    | usage by vehicle or stationary unit. It allows owners to reduce cost and maximized profits.
+                    |  Applicable for generators, vehicles, tanks, trucks and ships.
+                  p Celchin’s overall aim is to meet our customers’ needs with best possible services levels with top 
+                    | quality equipment and at a highly competitive level of pricing.
+                  p Our generators are also used for short-term projects, enabling the operation of a range of events, 
+                    | festivals, Planned Maintenances, Black out, down time and sporting tournaments as well as 
+                    | servicing core industries such as Utilities, Petrochemicals, Manufacturing and Oil &amps; Gas.
+                  p Often, our Power solutions are combined with our spare parts supports, as we look after our customers’ 
+                    | total rental solutions and services requirements.
+                  p The Celchin power fleet includes gas and diesel generators with a capacity of 10kVA to 2000kVA.
+                    | We ensure your industries, Manufactures, Companies, hotels, office, retail or housing development,
+                    | Estates, remains useable, rentable and saleable, no matter the climate.
+                    |  We offer dedicated IPP solutions to estates and residential housing. 
+                button(type="button" class="button jara-button toggle-less" role="button") Show more 
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug 
+      script(src="/javascripts/animation.js")

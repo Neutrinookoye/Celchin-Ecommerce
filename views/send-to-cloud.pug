@@ -1,0 +1,24 @@
+block content 
+body 
+  include includes/celchin-head.pug 
+  main 
+    h2 Welcome to Cloud Storage 
+    div.wrapper 
+      div.wrap 
+        div.wrap-md-4 
+          form(method="Post" enctype="multipart/form-data" class="pad-20 bg-white shadow") 
+            label(for="name") Name 
+            input(type="text" name="name" id="name" class="input input-border-faint  pad-10 m-b-1") 
+            label(for="file") File 
+            input(type="file" name="avatar" id="avatar" class="input input-border-faint pad-10 m-b-1") 
+            input(type="submit" value="Upload" class="input bg-dark white-text pad-10 input-border-faint") 
+        div.wrap-md-8 
+          div(style="margin-left:2rem") 
+            if uploads.length > 0 
+              div.wrap 
+                each upload in uploads 
+                  div.wrap-md-4
+                    a(href=`/upload/${upload._id}`) 
+                      figure 
+                        img(src=upload.fileUrl alt=`${upload.name}` class="w-100") 
+                        figcaption #{upload.name }

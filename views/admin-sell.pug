@@ -1,0 +1,61 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper  
+                  div.wrap.justify-content-between  
+                    div.wrap-md-12
+                      if sells.length > 0 
+                        h2 List of items for sell 
+                        .table-responsive.prodd  
+                          table(class="table table-bordered m-b-1 ") 
+                            thead 
+                              tr 
+                                th S/N 
+                                th Customer Name  
+                                th Phone Number 
+                                th Email 
+                                th Product Name 
+                                th Price  
+                                th Lookup 
+                                th Status
+                                th Action 
+                            tbody 
+                              each item , i in sells 
+                                - let status = item.cleared  ? "Cleared" : "Not Cleared"
+                                tr  
+                                  td #{i + 1} 
+                                  td(class="name" data-identifier=item._id) #{item.name} 
+                                  td #{item.phone} 
+                                  td #{item.email} 
+                                  td #{item.productName} 
+                                  td #{item.amount.toLocaleString()} 
+                                  td #[a(href=`/celchin-admin/sellers/${item._id}`) View] 
+                                  td #{status}
+                                  td #[input(class="input input-border-faint check" type="checkbox" data-id=item._id)] 
+                        button(class="button no-border no-outline bg-red white-text m-r-1" id="removeSell") Remove
+                        button(class="button no-border no-outline bg-green  white-text" id="clearSell") Clear
+                      else 
+                        h3 No product has been placed for sale yet 
+
+    script(src="/js/ordermanager.js" type="module")
+    script(src="/js/easyframer.js")
+    script(src="/js/transactionmanager.js" type="module")
+
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")

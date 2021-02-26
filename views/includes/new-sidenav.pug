@@ -1,0 +1,127 @@
+block content
+    nav.pcoded-navbar
+        .navbar-wrapper
+            .navbar-bran.header-log
+                a.b-brand(href='')
+                    span.b-title Celchin 
+                a#mobile-collapse.mobile-menu(href='javascript:')
+                    span
+            .navbar-content.scroll-div
+                ul.nav.pcoded-inner-navbar
+                    if admin
+                        li.nav-item.pcoded-menu-caption
+                            label Basic
+                        li(class=`nav-item ${dash_active}`)
+                            a.nav-link(href='/celchin-admin/dashboard')
+                                span.pcoded-micon
+                                    i.feather.icon-home
+                                span.pcoded-mtext Dashboard
+                        li.nav-item.pcoded-menu-caption
+                            label Setup and Config
+                        li(class=`nav-item pcoded-hasmenu ${basic_active} ${opensession_active}`)
+                            a.nav-link(href='javascript:')
+                                span.pcoded-micon
+                                    i.feather.icon-settings
+                                span.pcoded-mtext Basic Settings
+                            ul.pcoded-submenu
+                                li(class=`nav-item ${profile_active}`)
+                                    a(href='/celchin-admin/profile') Profile Setting
+                                li(class=logo_active)
+                                    a(href="/celchin-admin/subadmin") Add Sub-Admin
+                                li(class=roles_active)
+                                    a(href="/celchin-admin/settings/site-configuration") Site Configuration                                
+                        li.nav-item.pcoded-menu-caption
+                            label Functions
+                        li(class=`nav-item ${cat_active}`)
+                            a.nav-link(href='/celchin-admin/product-categories')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Categories
+                        li(class=`nav-item ${prod_active}`)
+                            a.nav-link(href='/celchin-admin/products')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Products
+                        li(class=`nav-item ${shop_active}`)
+                            a.nav-link(href='/celchin-admin/shop')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Shop 
+                        li(class=`nav-item ${hire_active}`)
+                            a.nav-link(href='/celchin-admin/hire')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Hire
+                        li(class=`nav-item ${sell_active}`)
+                            a.nav-link(href='/celchin-admin/sellers')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Sellers
+                        li(class=`nav-item ${trans_active}`) 
+                            a.nav-link(href='/celchin-admin/transactions')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Transaction
+                        li(class=`nav-item ${cust_active}`)
+                            a.nav-link(href='/celchin/customers')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Customers
+                        li(class=`nav-item ${mess_active}`)
+                            a.nav-link(href='/celchin-admin/messaging')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Message
+                        li(class=`nav-item ${ads_active}`)
+                            a.nav-link(href='/celchin-admin/ad-manager')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Ad-Manager
+                        li(class=`nav-item ${blog_active}`)
+                            a.nav-link(href='/celchin-admin/blog')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Blog
+                        li(class=`nav-item ${email_active}`)
+                            a.nav-link(href='/celchin-admin/email')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Email
+                    else
+                        li(class=`nav-item ${approveddemo_actice}`)
+                            a.nav-link(href='/investor')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Dashboard
+                        li(class=`nav-item ${approveddemo_actice}`)
+                            a.nav-link(href='/investments')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Profile
+                        li(class=`nav-item ${approveddemo_actice}`)
+                            a.nav-link(href='/posts')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Charges
+                        li(class=`nav-item ${approveddemo_actice}`)
+                            a.nav-link(href='/withdraws')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext History
+                        li(class=`nav-item ${approveddemo_actice}`)
+                            a.nav-link(href='/transactions')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Complaints
+                        
+                        li(class=`nav-item ${approveddemo_actice}`)
+                            a.nav-link(href='/settings/general')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext General Settings
+                        li(class=`nav-item ${approveddemo_actice}`)
+                            a.nav-link(href='/settings/account')
+                                span.pcoded-micon
+                                    i.feather.icon-tablet
+                                span.pcoded-mtext Account Settings
+                                

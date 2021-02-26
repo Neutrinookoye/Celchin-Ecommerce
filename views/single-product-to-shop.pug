@@ -1,0 +1,26 @@
+block content 
+body 
+  include includes/celchin-head.pug
+  div.section-wrapper.bg-fain.after-fixed-elem
+    div.wrapper 
+      div.wrap 
+        div.wrap-md-10 
+          p Welcome 
+          form(class="shadow bg-white pad-20 wrap-md-4" method="POST") 
+            label(for="name") Name 
+            input(type="text" id="name" name="name" class="input input-border-faint m-b-1" required) 
+            label(for="email") Email  
+            input(type="email" id="email" name="email"  class="input input-border-faint m-b-1" required) 
+            label(for="rating") Rating  
+            select(id="rating" name="rating" required class="input input-border-faint m-b-1") 
+              option(value="5") 5 
+              option(value="4") 4 
+              option(value="3") 3 
+              option(value="2") 2 
+              option(value="1") 1 
+            label(for="name") Comment 
+            textarea(id="comment" name="comment" class="input input-border-faint m-b-1" required)  
+            input(type="submit" class="input input-border-faint bg-blue-dark white-text radius-5" value="Proceed")
+  //include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  script(src="/js/transactionmanager.js" type="module") 

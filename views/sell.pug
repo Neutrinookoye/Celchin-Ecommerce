@@ -1,0 +1,101 @@
+include includes/celchin-header.pug 
+block content 
+  link(rel='stylesheet' , href='/stylesheets/celchin.css')
+  body 
+    include includes/celchin-navbar.pug
+    marquee(behavior="", direction="to left" class="bg-marquee")
+        p #[span.m1 At Celchin, We sell the best!] #[span.m2 #[i(class="fa fa-shopping-cart")] SHOP NOW!!!] #[span.m3 Premium Prices, Best Prices like nowhere else.]
+    div.section-wrapper.bg-fain.after-fixed-elem
+      div.container-fluid.mt-4
+        div.row 
+          div.col-md-6 
+            h2.text-bold.mb-4.text-center We Buy Electronics 
+            p Sell your used electronics to Celchin 
+            div.generator-video.m-b-1
+              video(controls ) Your device does not support media 
+            div.sell-text 
+              p.m-b-1 Generator Source purchases new, surplus, and used generators and ancillary
+                | power generation equipment such as transformers, automatic transfer switches, 
+                | electrical switchgear and more. Get cash for your assets quickly and hassle free
+                |by selling all your used power generation equipment to us. 
+              p.m-b-1 Generator Source purchases new, surplus, and used generators and ancillary
+                | power generation equipment such as transformers, automatic transfer switches, 
+                | electrical switchgear and more. Get cash for your assets quickly and hassle free
+                |by selling all your used power generation equipment to us. 
+              p.m-b-1 Generator Source purchases new, surplus, and used generators and ancillary
+                | power generation equipment such as transformers, automatic transfer switches, 
+                | electrical switchgear and more. Get cash for your assets quickly and hassle free
+                |by selling all your used power generation equipment to us.
+          .col-md-6.form-section-pad
+            div.form-section.sell-form
+              h3.sell-prompt Enter the generator details 
+              form(method="post" class="form-horizontal" enctype="multipart/form-data") 
+                div.row 
+                  div.col-md-6 
+                    div.m-r-1 
+                      label(for="First Name") Name #[span.red *] 
+                      input(class="input form-control" type="text" id="name" name="name") 
+                  div.col-md-6 
+                    label(for="email") Email #[span.red *] 
+                    input(class="input form-control" type="email" id="email" name="email") 
+                  div.col-md-6 
+                    div.m-r-1 
+                      label(for="Phone") Phone #[span.red *] 
+                      input(class="input form-control" type="tel" id="mobile" name="mobile") 
+                  div.col-md-6 
+                    label(for="State of Residence") State of Residence #[span.red *] 
+                    select(class="input form-control" id="stateOfResidence" name="stateOfResidence") 
+                      option(value="Abia") Abia 
+                      option(value="Adamawa") Adamawa
+                      option(value="Akwa Ibom") Akwa Ibom
+                      option(value="Anambra") Anambra
+                      option(value="Bauchi") Bauchi
+                      option(value="Bayelsa") Bayelsa
+                      option(value="Benue") Benue
+                      option(value="Borno") Borno
+                      option(value="Cross River") Cross River
+                      option(value="Delta") Delta 
+                      option(value="Ebonyi") Ebonyi
+                      option(value="Edo") Edo
+                      option(value="Ekiti") Ekiti
+                      option(value="Enugu") Enugu
+                      option(value="Gombe") Gombe
+                      option(value="Jigawa") Jigawa
+                      option(value="Kaduna") Kaduna
+                      option(value="Kano") Kano
+                      option(value="Katsina") Katsina
+                      option(value="Kebbi") Kebbi
+                      option(value="Lagos") Lagos
+                  div.col-md-6 
+                    div.m-r-1 
+                      label(for="Product Name") Product Name 
+                      input(class="input form-control" type="text" id="productName" name="productName") 
+                  div.col-md-6 
+                    label(for="manufacturer") Manufacturer 
+                    input(class="input form-control" type="text" id="manufacturer" name="manufacturer") 
+                  div.col-md-12
+                    div 
+                      label(for="description") Description 
+                      textarea(class="input form-control"  id="description" name="description") 
+                  div.col-md-12 
+                    div.m-r
+                      label(for="email") Cost Price 
+                      input(class="input form-control" type="text" id="price" name="price")
+                  div.col-md-12 
+                    label(for="email") Attach Images #[span.red *] #[span.small (You can select up to 10 images)]
+                    input(class="input form-control" type="file" id="avatar" name="avatar" multiple)  
+                  .col-md-12.pt-4  
+                    input(class="input btn btn-orange" type="submit" id="submit" name="submit" value="Proceed")
+
+
+  script(src="/js/cart.js" type="module")
+  script(src="/javascripts/library/search.js" type="module")
+  include includes/footerDesign.pug
+
+  include includes/cel-footer.pug 
+
+
+
+  //include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  script(src="/js/handle-sell.js" type="module") 

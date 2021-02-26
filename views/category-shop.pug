@@ -1,0 +1,81 @@
+include includes/celchin-header.pug
+block content
+  link(rel="stylesheet" , href="/stylesheets/pagination.css")
+  link(rel='stylesheet' , href='/stylesheets/celchin.css')
+  body
+    include includes/celchin-navbar.pug
+    main(id="main" class="recommended")
+      div(class="container-fluid mt-4 mb-5")
+        .d-flex.justify-content-between
+          div
+            h4 #[strong #{name} ]
+          .page-box.text-center
+            if totalProducts.length > displaySize
+              - let pagePoint =  currentPage + 1
+              - let pageUrl = `/shop/${name}?page= ` + pagePoint
+              .container
+                .row
+                  if currentPage > 1 
+                    - let backPoint = currentPage - 1
+                    - let backUrl = `/shop/${name}?page=` + backPoint
+                    a(class="first" href=backUrl)
+                      span Prev
+                  span.pageNm #{pagePoint - 1}
+                  if currentPage != pages
+                    a(class=" second" href=pageUrl)
+                      span Next
+              p.small Showing Page #{pagePoint - 1} of #{pages}
+          
+        div(class="category-page")
+          div(class="")
+            if products.length > 0 
+              div.row.row-mobile
+                each product in products 
+                  .col-lg-4.col-md-6
+                    .box
+                      .row
+                        .col-xl-4.col-lg-12
+                          .img-center
+                            img(src=`/products/${product.product.profile}` class="" alt="Product")
+                        .col-xl-7.col-lg-12
+                          div.prod-box
+                            p.prod-head.mb-0.text-bold #{product.product.name}
+                            p.mb-0.prod-para 
+                              span Warranty : 
+                              span #{product.product.warranty} 
+                            p.prod-para-box.mb-0 #[i(class="fa fa-quote-left")]
+                              p.prod-para #{product.product.description}
+                          p.link-para
+                            a(data-name=`${product.product.name}` data-code=`${product.product._id}` href="#" class="btn btn-primary  mr-2 cart-item link2") Add to Cart
+                            a(href='/shop/product/' + product.product.productCode class="btn btn-primary link") View
+
+
+                  //- div.col-md-4 
+                  //-   div.hire-card.m-r-1 
+                  //-     img(src=`/products/${product.product.profile}` class="hire-card-img-top")
+                  //-     div.card-body 
+                  //-       div.card-body 
+                  //-       strong #{product.name}
+                  //-       p 
+                  //-         strong  Amount : 
+                  //-         span &#8358; #{product.product.amount.toLocaleString()} 
+                  //-       p 
+                  //-         strong Warranty : 
+                  //-         span #{product.product.warranty} 
+                  //-       - let specifications = product.product.specification.split(" , ") 
+                  //-       strong Specifications 
+                  //-       ul 
+                  //-         each spec in specifications 
+                  //-           li #{spec}
+                  //-       h3.uppercase Description 
+                  //-       div #{product.description}
+                  //-       //p.hire-card-footer 
+                  //-         a(href=`/shop/${product.category}/${product.name}`) View Details  
+                  //-       a(type="button" class="cart-item mr-3 " data-name=`${product.name}` data-code=`${product._id}` id="chat-btn") #[i(class="fa fa-plus")] Add to Cart
+                  //-       a(href=`/shop/product/${product.product.productCode}` type="button") Check Details
+              
+       
+      script(src="/js/cart.js" type="module")                   
+      include includes/footerDesign.pug   
+
+      include includes/cel-footer.pug

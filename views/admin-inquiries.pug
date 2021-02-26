@@ -1,0 +1,58 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper  
+                  
+                  div.wrap 
+                    div.wrap-md-12
+                      if  inquiries.length > 0  
+                        h2 Inquiries  
+                        .table-responsive.prodd
+                          table(class="table table-bordered m-b-1") 
+                            thead 
+                              tr  
+                                th S/N
+                                th UserName  
+                                th Date Created 
+                                th Product Quantity 
+                                th Status 
+                                th Action
+                            tbody
+                              each inquire  , i in inquiries 
+                                -let inquireUrl = `/celchin-admin/inquiries/${inquire._id}` 
+                                - let totalOrder = inquire.products.reduce((a , b) => a + b.quantity , 0) 
+                                - let status = inquire.status ? "Cleared" : "Not Cleared"
+                                tr 
+                                  td #{i + 1}  
+                                  td(class="name" data-identifier=inquire._id) #{inquire.name} 
+                                  td #{inquire.dateInquired.toDateString()}
+                                  td #{totalOrder}
+                                  td #{status}
+                                  td #[input(type="checkbox" class="check")] #[a(href=inquireUrl class="action-button" target="_blank") View]                                        
+                        button(class="button no-border no-outline bg-dark white-text m-r-1 " id="clearHire") Clear 
+                        button(class="button no-border no-outline bg-green white-text " id="deleteHire") Delete
+                      else
+                        h3 Nothing to display yet.
+
+    script(src="/js/ordermanager.js" type="module")
+    script(src="/js/easyframer.js")
+
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")
+  

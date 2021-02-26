@@ -1,0 +1,129 @@
+include includes/bigjara-head.pug 
+link(rel="stylesheet" href="/css/blog.css")
+block content 
+body.bg-fainted  
+  section(class="d-wrapper")
+    include includes/sidebar.pug 
+    main.main(style="width:100%")
+      include includes/admin-nav.pug 
+      div.wrapper  
+        div.wrap.justify-content-between  
+          div.wrap-md-8
+            div.m-r-1  
+              form(class="pad-20 m-b-2 shadow bg-white bold-350 font-1 radius-5 wrap-12 wrap-md-4" id="form" action=`` method="post" enctype="multipart/form-data") 
+                if product.profile  
+                    - let src = `/products/${product.profile}` 
+                    img(src=src alt=product.name title="User Profile" class="w-100 img-rectangular") 
+                input(type="file" accept=".jpg , .jpeg , .gif , .png" name="avatar" id="avatar" class="input validate pad-input input-m-b-1 input-border-faint" ) 
+                input(type="submit" id="change" class="input pad-input input-m-b-1 input-border-faint bg-dodgerblue white-text" value="Change")
+              form(class="" name="" action="" method="POST" )
+                input(class="input wa input-border-faint pad-input m-b-1" value=product.name type="text" name="title" data-author=admin._id id="title" required placeholder="Enter category title") 
+                
+                input(class="input wa input-border-faint pad-input m-b-1 wrap-md-6" value=product.amount type="text" name="amount"  id="amount" required placeholder="Enter product price") 
+                input(class="input wa input-border-faint pad-input m-b-1 wrap-md-6" value=product.quantity type="text" name="quantity"  id="quantity" required placeholder="Enter the quantity") 
+                 
+                input(class="input wa input-border-faint pad-input m-b-1  wrap-md-6"  value=product.warranty type="text" name="warranty"  id="warranty" required placeholder="Warranty") 
+                input(class="input wa input-border-faint pad-input m-b-1  wrap-md-6" value=product.specification type="text" name="specification"  id="specification" required placeholder="List the specifications") 
+                div 
+                  //div.wrap.justify-content-between.m-b-2.bot 
+                    div 
+                      a(href="" class="button no-border no-outline bg-white radius-5 shadow") #[i.fa.fa-music] Add media 
+                    div 
+                      a(href="" class="m-r-1 no-border no-outline bg-fainted shadow pad-10" id="visual") Visual
+                      a(href="" class="no-border no-outline bg-submit white-text shadow pad-10" id="text") Text 
+                  div.wrap-justify-content-between.m-b-1 
+                    div.wrap.justify-content-between.editor-icons
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="bold") #[i.fa.fa-bold] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="italic") #[i.fa.fa-italic] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="delete") #[i.fa.fa-trash] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="indent") #[i.fa.fa-indent] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="outdent") #[i.fa.fa-outdent]  
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="strikeThrough") #[i.fa.fa-strikethrough] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="justifyLeft") #[i.fa.fa-align-left] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="justifyCenter") #[i.fa.fa-align-center]
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="justifyRight") #[i.fa.fa-align-right]
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="subscript") #[i.fa.fa-subscript]
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="superscript") #[i.fa.fa-superscript] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="insertUnorderedList") #[i.fa.fa-list-ul] 
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="insertOrderedList") #[i.fa.fa-list-ol] 
+                      div.editor-wrap-1(style="position:relative") 
+                        button(class="mw-r-1 no-border no-outline" id="createLink") #[i.fa.fa-link] 
+                        div#link.d-nothing(style="position:absolute;top:0;left:-120px;background:#f00;z-index:3" )
+                          input(class="input input-border-faint" id="linkHref"  style="background:#fff;border:1px solid #000") 
+                          
+                      div.editor-wrap-1 
+                        button(class="mw-r-1 no-border no-outline" id="insertImage") #[i.fa.fa-picture-o]
+                     
+                      div.editor-wrap-1
+                        button(class="no-border no-outline" id="insertParagraph") #[i.fa.fa-paragraph] 
+                      div.editor-wrap-1 
+                        button(class=" no-border no-outline" id="underline") #[i.fa.fa-underline]
+                      div.editor-wrap-1(style="position:relative") 
+                        button(class=" no-border no-outline" id="fontName") #[i.fa.fa-font]
+                        select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="fonts" selected="Arial") 
+                          option(value="Arial" selected) Arial
+                          option(value="Arial") Arial
+                          option(value="Georgia") Georgia 
+                          option(value="Times New Roman") Times New Roman 
+                          option(value="Verdana") Verdana 
+                          option(value="monospace") Monospace 
+                          option(value="Courier") Courier
+                      div.editor-wrap-1(style="position:relative")  
+                        button(class=" no-border no-outline" id="fontSize") 14px
+                        select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="size" selected="1") 
+                          option(value="1" selected) 1
+                          option(value="2") 2
+                          option(value="3") 3
+                          option(value="4") 4
+                          option(value="5") 5
+                          option(value="6") 6 
+                          option(value="7") 7
+                      div.editor-wrap-1(style="position:relative")  
+                        button(class=" no-border no-outline" id="fillTrigger") Fill 
+                        select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="fill" selected="#f00") 
+                          option(value="#f00" selected) #[span(style="background:#f00;padding : 8px 12px;color:#fff") ] Red
+                          option(value="blue") #[div(style="background:blue;padding : 8px 12px;color:#fff;width=10px;height:10px") ] Blue
+                          option(value="green") #[span(style="background:green;padding : 8px 12px;color:#fff") ] Green
+                          option(value="yellow") #[span(style="background:yellow;padding : 8px 12px;color:#fff") ] Yellow
+                          option(value="orange") #[span(style="background:orange;padding : 8px 12px;color:#fff") ] Orange
+                          option(value="pink") #[span(style="background:pink;padding : 8px 12px;color:#fff") ] Pink
+                          option(value="purple") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") ] Purple
+                           option(value="white") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") white ] 
+                      div.editor-wrap-1(style="position:relative")  
+                        button(class=" no-border no-outline" id="colorTrigger") Color
+                        select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="color" selected="#f00") 
+                          option(value="#f00" selected) #[span(style="background:#f00;padding : 8px 12px;color:#fff") ] Red
+                          option(value="blue") #[span(style="background:blue;padding : 8px 12px;color:#fff") ] Blue
+                          option(value="green") #[span(style="background:green;padding : 8px 12px;color:#fffwidth=10px;height:10px") ] Green
+                          option(value="yellow") #[span(style="background:yellow;padding : 8px 12px;color:#fff") ] Yellow
+                          option(value="orange") #[span(style="background:orange;padding : 8px 12px;color:#fff") ] Orange
+                          option(value="pink") #[span(style="background:pink;padding : 8px 12px;color:#fff") ] Pink
+                          option(value="purple") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") ] Purple
+                          option(value="white") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") ] White
+                      div.editor-wrap-1 
+                        button(class=" no-border no-outline") #[i.fa.fa-share] 
+                      div.editor-wrap-1 
+                        button(class=" no-border no-outline" id="removeFormat") #[i.fa.fa-forward]
+                  div(class="content-area editor-style  no-margin" data-identifier=`${product._id}`  contenteditable="true" id="content")  
+                  //div.wrap.justify-content-between.word-counter.m-b-2 
+                    div.m-b-1 
+                      p Word count #[strong.words 0] 
+                    div 
+                      p Last modified by Adeleke Bright on Saturday 26th September , 2020
+                  div(style="text-align:righ")
+                    button(class="no-border m-b-2 no-outline button bg-blue-dark white-text shadow radius-5" id="save") Save 
+  script(src="/js/easyframer.js")
+  script(src="/js/edit-product.js" type="module")

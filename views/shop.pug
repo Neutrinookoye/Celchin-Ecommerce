@@ -1,0 +1,43 @@
+block content 
+body 
+  include includes/celchin-head.pug
+  div.section-wrapper.bg-fain.after-fixed-elem
+    div.wrapper 
+      div.wrap 
+        div.wrap-md-4  
+          h2 Product Categories 
+          ul.list-unstyled   
+            each category , i in categories 
+              li 
+                a(class="aside-link" href=`/shop/${category.name}`) #{category.name} 
+        div.wrap-md-8 
+          if products.length > 0 
+            div.wrap 
+              each product  , i in products 
+                div.wrap-md-4 
+                  div.hire-card.m-r-1 
+                    img(src=`/products/${product.profile}` data-original=`/products/${product.profile}` alt=` Image of ${product.name}` title="Celchin Products" class="hire-card-img-top")
+                    div.card-body 
+                      strong #{product.name}
+                      p 
+                        strong  Amount : 
+                        span &#8358;#{product.amount.toLocaleString()} 
+                      p 
+                        strong Warranty : 
+                        span #{product.warranty} 
+                      - let specifications = product.specification.split(" , ") 
+                      strong Specifications 
+                      ul 
+                        each spec in specifications 
+                          li #{spec}
+                      h3.uppercase Description 
+                      div #{product.description}
+                      //p.hire-card-footer 
+                        a(href=`/shop/${product.category}/${product.name}`) View Details  
+                      a(type="button" class="cart-item mr-3 " data-name=`${product.name}` data-code=`${product._id}` id="chat-btn") #[i(class="fa fa-plus")] Add to Cart
+                      a(href=`/shop/product/${product.productCode}` type="button") Check Details
+          
+       
+  //include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  script(src="/js/cart.js" type="module")

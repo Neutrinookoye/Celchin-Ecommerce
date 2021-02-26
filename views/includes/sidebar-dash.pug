@@ -1,0 +1,184 @@
+block content 
+    div(class="sidebar")
+        div(class="sidebar-wrapper")
+            if admin
+                div(class="logo")
+                    span(class="simple-text logo-mini") #{admin.userName.toUpperCase()}
+                    span(class="simple-text logo-normal") Admin
+                ul(class="nav accordion" id="accordionSidebar")
+                    li(class="")
+                        a(href="/admin/dashboard")
+                            i(class="tim-icons icon-chart-pie-36")
+                            span Dashboard
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseCompany" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-settings-gear-63")
+                            span Settings 
+                        div(id="collapseCompany" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/admin/settings")   Admin settings  
+                                 a(class="collapse-item" href="/admin/settings/site-configuration")   Site Configuration   
+                                a(class="collapse-item" href="/admin/settings/subadmin") Add Subadmin 
+                                a(class="collapse-item" href="/admin/settings/avatar") Update Avatar
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseCategory" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-settings-gear-63")
+                            span Categories  
+                        div(id="collapseCategory" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                //- a(class="collapse-item" href="/admin/categories/add")   New   
+                                a(class="collapse-item" href="/admin/categories")       All 
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-settings-gear-63")
+                            span Product 
+                        div(id="collapseProduct" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")  
+                                a(class="collapse-item" href="/admin/products") All 
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseShop" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-settings-gear-63")
+                            span Shop  
+                        div(id="collapseShop" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")  
+                                a(class="collapse-item" href="/admin/products") Marketplace  
+                                a(class="collapse-item" href="/admin/products") Add Product 
+                                a(class="collapse-item" href="/admin/products") Top products 
+                                a(class="collapse-item" href="/admin/products") Least Products 
+
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-settings-gear-63")
+                            span Hire   
+                        div(id="collapseProduct" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")  
+                                a(class="collapse-item" href="/admin/products") View  
+                                a(class="collapse-item" href="/admin/products") Lease  
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseProduct" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-settings-gear-63")
+                            span Orders   
+                        div(id="collapseProduct" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")  
+                                a(class="collapse-item" href="/admin/products") All  
+                                a(class="collapse-item" href="/admin/products") Purchase 
+                                a(class="collapse-item" href="/admin/products") Enquiry  
+                                a(class="collapse-item" href="/admin/products") Hire  
+
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseInvestment" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-credit-card")
+                            span Sales 
+                        div(id="collapseInvestment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/admin/investments")  All   
+                                a(class="collapse-item" href="/admin/investments/pending") Shop 
+                                a(class="collapse-item" href="/admin/transactions/completed") Hire  
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseInvestment" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-credit-card")
+                            span Customers 
+                        div(id="collapseInvestment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/admin/investments")  All   
+                                a(class="collapse-item" href="/admin/investments/pending") Recent  
+                                a(class="collapse-item" href="/admin/transactions/completed") Defaulters 
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseInvestment" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-credit-card")
+                            span Messanger  
+                        div(id="collapseInvestment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/admin/investments")  Chat   
+                                a(class="collapse-item" href="/admin/investments/pending") Facebook 
+                                a(class="collapse-item" href="/admin/transactions/completed") Whatsapp 
+                                a(class="collapse-item" href="/admin/transactions/completed") Instagram  
+                                a(class="collapse-item" href="/admin/transactions/completed") Twitter 
+                    li 
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseLoan11" aria-expanded="true" aria-controls="collapseTwo") 
+                            i(class="tim-icons icon-credit-card") 
+                            span Reviews  
+                        div(id="collapseLoan11" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner") 
+                                a(class="collapse-item" href="/admin/transactions") All 
+                                a(class="collapse-item" href="/admin/transactions/ten-percent") Approved   
+                                a(class="collapse-item" href="/admin/transactions/ninety-percent") Pending 
+                                a(class="collapse-item" href="/admin/transactions/peer-peer") Rejected  
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-single-02")
+                            span Analytics 
+                        div(id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/admin/users")   All 
+                                a(class="collapse-item" href="/admin/users")   Shops 
+                                a(class="collapse-item" href="/admin/users/active") Customers  
+                                a(class="collapse-item" href="/admin/users/blocked") Reviews  
+                    
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseSupport" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-single-02")
+                            span Supports 
+                        div(id="collapseSupport" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/admin/inbox")  Inbox  
+                                a(class="collapse-item" href="/admin/outbox")  Outbox
+            
+            if user
+                div(class="logo")
+                   span(class="simple-text logo-mini") #[i(class="tim-icons icon-bag-16")]
+                   span(class="simple-text logo-normal") #{user.userName}
+                ul(class="nav accordion" id="accordionSidebar") 
+                    li(class="")
+                        a(href="/dashboard")
+                            i(class="tim-icons icon-chart-pie-36")
+                            span Dashboard
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseProfile" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-single-02")
+                            span Profile
+                        div(id="collapseProfile" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/dashboard/account/settings") Your Profile
+                                a(class="collapse-item" href="/user/avatar")  Update Avatar
+
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseLoan1" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-credit-card")
+                            span Investment 
+                        div(id="collapseLoan1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/user/investments") All investment  
+                                //- a(class="collapse-item" href="/user/investments/pending") Pending Investment 
+                                //- a(class="collapse-item" href="/user/investments/active") Active Investment 
+                    //- li
+                    //-     a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseLoan2" aria-expanded="true" aria-controls="collapseTwo")
+                    //-         i(class="tim-icons icon-credit-card")
+                    //-         span Withdrawal  
+                    //-     div(id="collapseLoan2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                    //-         div(class="py-2 collapse-inner")
+                    //-             a(class="collapse-item" href="/user/withdrawals") All Withdrawals   
+                                
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseLoan3" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-user-run")
+                            span Referral   
+                        div(id="collapseLoan3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/referrals") Your referrals     
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseLoan4" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-tv-2")
+                            span Testimony    
+                        div(id="collapseLoan4" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/testimonies") All testimonies     
+                                a(class="collapse-item" href=`/users/${user._id}/testimonies`) Your testimonies   
+                    li
+                        a(href="" data-toggle="collapse" class="collapsed" data-target="#collapseProfile3" aria-expanded="true" aria-controls="collapseTwo")
+                            i(class="tim-icons icon-settings-gear-63")
+                            span Support  
+                        div(id="collapseProfile3" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+                            div(class="py-2 collapse-inner")
+                                a(class="collapse-item" href="/support/message") Message 
+                                //- a(class="collapse-item" href="/support/contacts")  Contacts 

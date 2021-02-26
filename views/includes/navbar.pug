@@ -1,0 +1,27 @@
+block content 
+  header(class="fixed-top bg-dodgerblue white-text w-100 header-wrapper" style="height:50px;")
+    div(class="wrap justify-content-between" style="flex-wrap: nowrap;") 
+      div(class="wrap-md-6 pad-top-1 d-md-hide" id="navbar-toggler") 
+        span(class="mobile-toggler" id="toggler") #[i(class="fa fa-bars toggler-icon")] 
+      div(class="wrap-md-2 pad-left-and-right") 
+        h1(class="brand-name") #[a(class="brand-link white-text" href="#") IGR  ] 
+      div(class="wrap-md-8" style="padding-top :5px;padding-bottom:5px;padding-left: 10%;")
+        div(class="dashboard-search-container") 
+          p(class="search-icon-box") 
+            i(class="fa fa-search nav-search") 
+          form(class="mobile-hide" style="width:98%") 
+            div.flex 
+              input(type="search" class="no-border no-outline" placeholder="Search..." style="width:100%;background:inherit") 
+      div(class="wrap-md-2 drop user-profile-style") 
+        div(class="dashboard-user-menu") 
+          p(class="user-menu") 
+            if true
+              img(src="/images/smile-90.jpg" height="30px" width="30px" style="border-radius: 50%;") 
+            i(class="fa fa-caret-down drop d-md-hide") 
+          p.drop 
+            i(class="fa fa-caret-down drop mobile-hide") 
+            div(class="dropdown-content d-nothing")   
+              p #[i(class="fa fa-user") Profile]
+              p #[i(class="fa fa-key") Settings]
+              p #[a(href="/admin/logout/") #[i(class="fa fa-sign-out")] Logout] 
+              

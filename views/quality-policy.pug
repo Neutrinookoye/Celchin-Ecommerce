@@ -1,0 +1,44 @@
+include includes/celchin-header.pug 
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;")
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-thumbs-up")] Quality #[span.orange-text Policy  #[i(class="fa fa-angle-right")] ]     
+                p Our mission is to be recognized by our customers, peers and ourselves as the leader in the 
+                  | markets we serve and to operate injury and accident free. We aim to exceed our customer’s
+                  |  expectations by providing only the highest quality products and services to help 
+                  | build a better future. We achieve this through safety, quality and teamwork
+                p Celchin commits to  : 
+                ul 
+                  li Maintain the best industry standards in its Business and continually improve our business processes and systems
+                  li Comply with statutory obligations, specifications and codes of practice relevant to quality management;
+                  li Excel in fleet availability, utilization and quality;
+                  li Provide staff with ongoing training and development opportunities; and
+                  li Identify report, investigate and resolve all non-conformities and take action to prevent recurrence.
+                p This Quality Policy is reviewed annually. Any improvements identified from this review will
+                  | be included in the Quality Policy to increase effectiveness
+              
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug 
+      script(src="/javascripts/animation.js")

@@ -1,0 +1,63 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug 
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper  
+                  h4.shadow.pad-10.mb-5(style="margin-bottom:0!important") Update your profile 
+                  div.wrap.justify-content-between 
+                    div.wrap-md-12.wrap-12.bg-white 
+                      div.wrap 
+                        div.wrap-12.wrap-md-8 
+                          form(method="post" id="form" enctype="multipart/form-data" class="pad-20 m-b-2 bg-white bold-350 font-1 radius-5" ) 
+                            if admin.profile 
+                              div.m-b-2#displayImage(style="position:relative;height:200px;width:200px;border-radius:50%; border:2px solid #ccc;margin:0 auto;margin-bottom:3rem") 
+                                img(src=`/admin-profile/${admin.profile}` alt="admin profile" style="position:absolute;width:100%;height:100%;border-radius:50%")
+                            else 
+                              div.m-b-2#displayImage(style="height:200px;width:200px;border-radius:50%; border:2px solid #ccc;margin:0 auto;margin-bottom:3rem")
+                            div.center-text
+                              input(type="file" class="input white-text bg-green pad-input input-m-b-1 input-border-faint wrap-md-6 wrap-12" name="avatar" id="avatar") 
+                            label(for="Full Name" class="label") Full Name  
+                            input(type="text" class="input v pad-10 input-m-b-1 input-border-faint data-field" name="fullName" value=admin.name id="fullName" required) 
+                            label(for="Email" class="label") Email 
+                            input(type="email" class="input v pad-10 input-m-b-1 input-border-faint border-good-color data-field" value=admin.email name="email" id="email" required) 
+                            label(for="Phone Number" class="label") Phone Number   
+                            input(type="tel" class="input v pad-10 input-m-b-1 input-border-faint data-field" name="phoneNumber" value=admin.phoneNumber id="phoneNumber" required) 
+                            button(type="submit" class="pad-10 no-border no-outline bg-green btn white-text m-r-1 m-b-2 uppercase v" id="update") Update Profile 
+                            a(class="pad-10 modal-trigger no-border no-outline btn-orange btn white-text m-r-1 " style="color:#fff!important;cursor:pointer") Change Password 
+                          div(class="modal w-100 h-100  z-index-overall  bg-white  top-0 left-0  wrapper") 
+                            div(class="modal-content wrap-md-4 center-box" data-modal-content-distance-from-top="5" data-modal-content-width="90") 
+                              
+                              span(class="close both-hover-with-focus") &times;
+                              form(class="shadow pad-20 m-b-2 bg-white bold-350 font-1 radius-5" action="/setup/accounts" method="post")
+                                h3 Change your password 
+                                hr
+                                label(for="tax name" class="label") Current Password   
+                                input(type="password" class="input validate pad-10 input-m-b-1 input-border-faint" autocomplete="false" name="currentPassword" id="currentPassword" required) 
+                                label(for="tax name" class="label") New Password 
+                                input(type="password" class="input validate pad-10 input-m-b-1 input-border-faint" autocomplete="false" name="newPassword" id="newPassword" required) 
+                                label(for="tax name" class="label") Re-enter Password 
+                                input(type="password" class="input validate pad-10 input-m-b-1 input-border-faint" autocomplete="false" name="confirmPassword" id="confirmPassword" required)
+                                input(type="submit" id= "updatePassword" class="input validate pad-input  input-border-faint bg-green white-text" value="Proceed")
+          
+    script(src="/js/easyframer.js") 
+    script(src="/js/handleImage.js") 
+    script(src="/js/updateProfile.js" type="module")
+    script(src="/js/transactionmanager.js" type="module")
+
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")

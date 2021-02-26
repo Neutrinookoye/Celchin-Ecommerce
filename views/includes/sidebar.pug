@@ -1,0 +1,37 @@
+block content 
+  aside(class="sticky s ") 
+    .side-bar 
+      if admin
+        h2(class="white-text no-border m-b-1-5 pad-10 white-border-bottom") #[a(class="nav-link" href="/admin/dashboard") #[i(class="fa fa-dashboard sidebar-icon")  Dashboard]] 
+        div(class="flex pad-left-and-right white-border-bottom white-text justify-content-between pad-2")
+          i(class="fa fa-plus")
+          span(class="nav-link") Settings
+          i(class="fa fa-chevron-right tabber")  
+        div(class="tab-content" style="overflow-y: scrol;") 
+          ul(class="drop-content pad-10  pad-left-and-right bg-dark no-style") 
+            li 
+              a(class="nav-link" href="/celchin-admin/settings/profile") #[i(class="fa fa-cc-mastercard sidebar-icon")] Profile Setting 
+            li 
+              a(class="nav-link" href="/celchin-admin/settings/subadmin") #[i(class="fa fa-files-o sidebar-icon")] Add subadmin 
+            li 
+              a(class="nav-link" href="/celchin-admin/settings/site-configuration") #[i(class="fa fa-files-o sidebar-icon")] Site Configuration 
+        p(class="white-text no-border   white-border-bottom") #[a(class="nav-link" href="/celchin-admin/product-categories") #[i(class="fa fa-upload sidebar-icon") ] Categories ]
+        p(class="white-text no-border   white-border-bottom") #[a(class="nav-link" href="/celchin-admin/products") #[i(class="fa fa-gear sidebar-icon")] Products ]
+        p(class="white-text no-border   white-border-bottom") #[a(class="nav-link" href="/celchin-admin/shop") #[i(class="fa fa-home sidebar-icon")  Shop]] 
+        p(class="white-text no-border  white-border-bottom") #[a(class="nav-link" href="/celchin-admin/hire") #[i(class="fa fa-dollar sidebar-icon")  Hire]]  
+        p(class="white-text no-border white-border-bottom") #[a(class="nav-link" href="/celchin-admin/sellers") #[i(class="fa fa-briefcase sidebar-icon")  Sellers]] 
+        p(class="white-text no-border white-border-bottom") #[a(class="nav-link" href="/celchin-admin/transactions") #[i(class="fa fa-dollar sidebar-icon")  Transaction]]  
+        p(class="white-text no-border  white-border-bottom") #[a(class="nav-link" href="/celchin/customers") #[i(class="fa fa-users sidebar-icon")  Customers]] 
+        p(class="white-text no-border  white-border-bottom") #[a(class="nav-link" href="/celchin-admin/messaging") #[i(class="fa fa-comment sidebar-icon")  Message]] 
+        p(class="white-text no-border  white-border-bottom") #[a(class="nav-link" href="/celchin-admin/ad-manager") #[i(class="fa fa-dollar sidebar-icon")  Ad manager]] 
+        p(class="white-text no-border  white-border-bottom") #[a(class="nav-link" href="/celhin-admin/blog") #[i(class="fa fa-comment sidebar-icon")  Blog]] 
+        p(class="white-text no-border  white-border-bottom") #[a(class="nav-link" href="/celhin-admin/email") #[i(class="fa fa-send sidebar-icon")  Email]] 
+      else 
+        p(class="bg-dodgerblu white-text no-border  pad-10") #[a(class="nav-link" href="/investor") #[i(class="fa fa-dashboard sidebar-icon")  Dashboard]] 
+        p(class=" white-text no-border  pad-10") #[a(class="nav-link" href="/investments") #[i(class="fa fa-plus sidebar-icon")  ] Profile] 
+        p(class=" white-text no-border  pad-10") #[a(class="nav-link" href="/posts") #[i(class="fa fa-comment sidebar-icon")  ] Charges] 
+        p(class="white-text no-border  pad-10") #[a(class="nav-link" href="/withdraws") #[i(class="fa fa-download sidebar-icon") ] History ] 
+        p(class="white-text no-border  pad-10") #[a(class="nav-link" href="/transactions") #[i(class="fa fa-cloud sidebar-icon")  Complaints]] 
+  
+        p(class="white-text no-border  pad-10") #[a(class="nav-link" href="/settings/general") #[i(class="fa fa-key sidebar-icon")  ] General Settings] 
+        p(class="white-text no-border  pad-10") #[a(class="nav-link" href="/settings/account") #[i(class="fa fa-user-secret sidebar-icon")  ] Account Settings] 

@@ -1,0 +1,66 @@
+include includes/celchin-header.pug 
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;")
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-paper-plane")] Our #[span.orange-text Vision #[i(class="fa fa-angle-right")]]
+                p To provide solutions to temporary power needs on a global scale and be recognized 
+                  | as a company who deliver reliable, tailored solutions to meet the customers' requirements,
+                  | coupled with outstanding service from a dedicated and professional team of personnel.
+                p We always aim to provide our staff with continual training and development in order 
+                  | to bring out the best in them and provide a sustainable future for all
+                h2.mt-5.text-right #[i(class="fa fa-angle-left")] Our #[span.orange-text Values #[i(class="fa fa-trophy")]]
+                p Following are the values we keep in our business:
+                .row.value-box
+                  .col-md-4.col-sm-6 
+                    p Deliver a tailored solution to all customers
+                  .col-md-4.col-sm-6 
+                    p Build and maintain long term relationships with customers
+                  .col-md-4.col-sm-6 
+                    p Safety is integral in any project, processes and people
+                  .col-md-4.col-sm-6.left
+                    p Staff are friendly, professional and knowledgeable
+                  .col-md-4.col-sm-6.right
+                    p Innovation is an ongoing process
+                div.hide 
+                  p Cechin has built its reputation upon its Values. We set out our behaviors, 
+                    | our culture and highlight how we should operate within our business.
+                  p Everyone in Celchin understands the importance of these Values and we strive to ensure that
+                    | these principles are constantly applied across our business.
+                  h2.mt-5.text-left #[i(class="fa fa-road")] Our #[span.orange-text Commitment #[i(class="fa fa-angle-right")]]
+                  p We consider each customer's requirements on an individual basis, providing site survey 
+                    | through to handover, ensuring we deliver excellent service and support throughout.
+                  p We take pride in our equipment and ensure it operates to maximum efficiency and without
+                    | environmental impact. We maintain our tools and equipment’s to the highest standard.
+                  p Equipment is continuously renewed; meaning a modern fleet of equipment will pass efficiency 
+                    | savings onto the customer whilst protecting the environment.
+                  strong Our Capabilities 
+                  ul 
+                    li Equipment’s from the most reputed manufacturers.
+                    li Comprehensive stock of spare parts for customers quick support
+                    li Team is equipped to support the customer needs around the clock
+                button(type="button" class="button toggle-less" role="button") Show more 
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug
+      script(src="/javascripts/animation.js")

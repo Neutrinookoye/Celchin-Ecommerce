@@ -1,0 +1,39 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper   
+                  
+                  div.wrap 
+                    div.wrap-md-6.justify-content-center
+                      h3.text-center.text-bold.mb-4 Welcome to Messaging 
+                      form(method="POST" class="shadow bg-white pad-20 ") 
+                        label(for="subject") Subject
+                        input(type="text" class="input input-border-faint m-b-1 pad-10" id="subject" name="subject") 
+                        label(for="to") To 
+                        input(type="text" class="input input-border-faint m-b-1 pad-10" id="to" name="to") 
+                        label(for="to") Body
+                        div(class="content-area editor-style  no-margin" style="height:200px" contenteditable="true" id="content")   
+                        button(type="submit" id="send" class="button no-outline no-border radius-5 bg-green white-text") #[i.fa.fa-send] Send
+
+    script(src="/js/messagemanager.js" type="module")
+    script(src="/js/easyframer.js")
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")
+  
+  

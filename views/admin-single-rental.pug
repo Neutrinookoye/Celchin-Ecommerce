@@ -1,0 +1,34 @@
+include includes/bigjara-head.pug 
+link(rel="stylesheet" href="/css/blog.css")
+block content 
+body.bg-fainted  
+  section(class="d-wrapper")
+    include includes/sidebar.pug 
+    main.main(style="width:100%")
+      include includes/admin-nav.pug 
+      div.wrapper  
+        
+        div.wrap 
+          div.wrap-md-10 
+            h3.underline Customer Information 
+            div.customer-information.d-flex(style="justify-content:space-evenly")
+                h4 #[strong Name : ] #{rent.name}
+                h4 #[strong  Email : ] #{rent.email}
+                h4 #[strong Address : ] #{rent.address} , #{rent.city} 
+                h4 #[strong Phone : ] #{rent.phone} 
+            hr  
+            h3.underline Order Summary  
+            hr 
+            div.d-flex(style="justify-content:space-evenly")
+            h4.mr-3 #[strong Product] #{rent.product.name} 
+            h4.mr-3 #[strong Hire From] #{rent.hireTimeLine.fromDate.toDateString()} : #{rent.hireTimeLine.fTime}
+            h4.mr-3 #[strong To] #{rent.hireTimeLine.toDate.toDateString()} : #{rent.hireTimeLine.tTime}
+            hr 
+            h3.underline User Question 
+            hr
+            div.col-md-3.mb-3.w-50.user-question.withdrawal 
+              q #{rent.comment}
+  script(src="/js/easyframer.js")  
+  script(src="/js/ordermanager.js" type="module")
+  
+  

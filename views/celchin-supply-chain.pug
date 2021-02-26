@@ -1,0 +1,67 @@
+include includes/celchin-header.pug 
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;")
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+                  
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-truck")] SUPPLY CHAIN #[span.orange-text MANAGEMENT #[i(class="fa fa-angle-right")] ]     
+                p Our company relies on the ability of several supply chain partners and a large stock of frequently 
+                  | requested products to be able to deliver even the rarest parts in the smallest timeframe possible
+                p We have an automated restock system which keeps strict track of inventory levels, which means a 
+                  | request for one or multiple generator parts and accessories, be it a common or unconventional item, 
+                  | is fulfilled without downtime on your end.
+                div.hide 
+                  p This stocking mechanism and a full range allows us also to ensure that all kinds of industrial and domestic 
+                    | needs in relation to power solutions, solar energy, fleets, generators, inventories, 
+                    | be they for small generator bulbs, solar panels, inverters, batteries, filters, spare parts,
+                    |  or with a view to implementing a full engine overhaul, are met with ease
+                  p An excellent and widely experienced after-sales support system and a history as a 
+                    | foremost name in the market makes us a reliable choice also for customers who would like to 
+                    | carry out maintenance on their own, with avid advice on choosing spare components.
+                  p We repair, tests and install electrical control panels to meet customer demands and projects. 
+                    | We supply and install control panels for new generator sets and offer upgrades for existing 
+                    | generators. We offer end user training to ensure that operators and team at site are familiar 
+                    | to interface with the system properly
+                  p #[strong Our services : ]
+                  ul 
+                    li Genuine Spare parts and Accessories Original
+                    li Original Alternator Spare Parts
+                    li Electrical and Mechanical Parts
+                    li Power tools and Accessories
+                    li Metering
+                    li Solar panels, inverter, batteries and accessories
+                    li Lubricants
+                    li Gas engines Spark plugs 
+                    li Coolants 
+                    li Filters 
+                    li Cummins gas engine Spark plugs 
+                    li Jenbacher gas engine Spark plug 
+                    li Cables and Cable trays 
+                    li Panels/Controls 
+                    li Electric motors 
+                    li Personal Protective equipment’s 
+                button(type="button" class="button toggle-less" role="button") Show more 
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug
+      script(src="/javascripts/animation.js")

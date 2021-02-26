@@ -1,0 +1,83 @@
+block content
+    header
+        div(class="topbar")
+            ul
+                li #[a(href="/shop") #[i(class="fa fa-shopping-basket")] Shop]
+                li #[a(href='/hire/') #[i(class="fa fa-sitemap")] Hire]
+                li #[a(href="/sell") #[i(class="fa fa-list-alt")] Sell]
+        div(class="d-none d-md-block")
+            div(class="main-nav")
+                div(class="container-fluid")
+                    div(class="row") 
+                        div(class="col-md-3")
+                            a(href="/" class="logo" style="text-transform:capitalize!important") Celchin
+                        div(class="col-md-1 help")
+                            a(href="#") Help
+                        div(class="col-md-5 search-area")
+                            input(type="search" class="form-control" id="search" placeholder="Search for Products, Categories...")
+                        div(class="col-md-3 cart-area")
+                            ul
+                                li #[a(href='/hire') Hire]
+                                li #[a(href="/cart" class="cart") #[i(class="fa fa-shopping-cart")] #[span(class="cart-number d-lg-inline d-none") Cart 0]]
+            
+            div(class="category-nav")
+                div(class="container-fluid text-center")
+                    ul
+                        li Categories:
+                        if categories 
+                          
+                            each category , i in categories.sort((a , b) => a.name.localeCompare(b.name)) 
+                                li #[a(href=`/shop/${category.name}`) #{category.name}]
+        div(class="target")
+        //- Mobile Main Nav
+        div(class="d-md-none")
+            div(class="mobile-nav")
+                div(class="container-fluid")
+                    div(class="float-left")
+                        button(type="button" class="mobile-nav-toggle break" id="mobile-open")
+                            span
+                            span
+                            span
+                    a(href="/" class="logo" style="text-transform:capitalize!important") Celchin
+                    div(class="float-right pt-1")
+                        ul(class="mobile-cart")
+                            li #[a(href="#") #[i(class="fa fa-tasks")]]
+                                li #[a(href="/cart" class="cart") #[i(class="fa fa-shopping-cart")] #[span(class="cart-number ") Cart 0]]
+                    div(class="clearfix")
+                    div(class="mobile-search mt-2")
+                        div(class="row justify-content-center")
+                            div(class="col-md-10 d-flex justify-content-between")
+                                a(href="#" id="backBtn") #[i(class="fa fa-arrow-left pt-2 mr-3")]
+                                input(type="search" class="form-control" id="search-mobile" placeholder="Search for Products, Categories...")
+                    hr
+
+                    div(id="mobileModal" class="mt-3")
+                        h5 Search Results
+                        p Nothing was found.
+                        
+
+            div(class="mobile-nav-options d-none")
+                div(class="container-fluid")
+                    div(class="row justify-content-center mb-3")
+                        div(class="col-10")
+                            div(class="row")
+                                div(class="col-6 box")
+                                    a(href="/cart") My Cart (#[span.cart-number 0])
+                                div(class="col-6 box")
+                                    a(href="#") Hire
+                                div(class="col-6 box")
+                                    a(href="#") Help Center
+                                div(class="col-6 box")
+                                    a(href="#") Inquiries
+
+                    ul(class="mobile-category")
+                        li Categories
+                        if categories 
+                          
+                            each category , i in categories.sort((a , b) => a.name.localeCompare(b.name)) 
+                                li #[a(href=`/shop/${category.name}`) #{category.name}]
+
+                    div(class="mobile-contact")
+                        a(href="#") #[i(class="fa fa-phone")] Contact Us
+
+                

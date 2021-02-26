@@ -1,0 +1,86 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper  
+                  p Welcome to the marketplace  , easily add items to shop  
+                  div.wrap.justify-content-between
+                    div.wrap-md-6.wrap-12.pad-10.shadow.bg-white
+                      if rents.length > 0 
+                        div.shadow.bg-white.p-2
+                          h3 Products for hire 
+                          .table-responsive.prodd
+                            table(class="table table-bordered m-b-2") 
+                                thead  
+                                tr 
+                                    th S/N 
+                                    th Name 
+                                    th Quantity 
+                                    th Status 
+                                    th Action 
+                                tbody  
+                                  each rent  , i in rents 
+                                    -let productUrl = `/admin/products/${rent.product._id}` 
+                                    -let status = rent.status ? "Visible" : "Hidden"
+                                    tr 
+                                      td #{i + 1} 
+                                      td(class="rents" rent-identifier=rent._id) #{rent.product.name} 
+                                      td #{rent.quantity} 
+                                      td #{status}
+                                      td #[input(type="checkbox"  class="input input-border-faint checkRent")]  
+                          button(class="button no-border no-outline white-text btn-orange  m-r-1 " id="removeHire") Remove 
+                          button(class="button no-border no-outline white-text bg-green" id="toggleHire") Toggle  
+                      else 
+                        h2 No product added for hire
+
+                    div.wrap-md-6.shadow.bg-white.pad-10.wrap-12.prodd
+                      if products.length > 0 
+                        h3 Items to add 
+                        .table-responsive
+                          table(class="table table-bordered m-b-2") 
+                            thead  
+                              tr 
+                                th S/N 
+                                th Name 
+                                th Quantity 
+                                th Refill  
+                                th Action 
+                            tbody 
+                              each product  , i in products 
+                                -let productUrl = `/admin/products/${product._id}`
+                                tr 
+                                  td #{i + 1} 
+                                  td(class="products" product-identifier=product._id) #{product.name} 
+                                  td #{product.quantity} 
+                                  td #[input(type="text" size="5" class="input input-border-faint refill")]
+                                  td #[input(type="checkbox"  class="input input-border-faint checkProduct")] 
+                          button(class="button no-border no-outline white-text btn-orange m-r-1" id="addHire") Add 
+                          button(class="button no-border no-outline white-text bg-green" id="topupButton") Topup   
+                      else 
+                        h2  No Items to add
+                      
+                  
+              
+              
+                 
+    script(src="/js/transactionmanager.js" type="module")
+    script(src="/js/easyframer.js")
+    script(src="/js/transactionmanager.js" type="module")
+
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")

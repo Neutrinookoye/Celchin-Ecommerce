@@ -1,0 +1,37 @@
+include includes/bigjara-head.pug 
+link(rel="stylesheet" href="/css/blog.css")
+block content 
+body.bg-fainted  
+  section(class="d-wrapper")
+    include includes/sidebar.pug 
+    main.main(style="width:100%")
+      include includes/admin-nav.pug 
+      div.wrapper  
+        
+        div.wrap 
+          div.wrap-md-10 
+            h3.underline Customer Information 
+            div.customer-information.d-flex(style="justify-content:space-evenly")
+                h4 #[strong Name : ] #{inquire.name}
+                h4 #[strong  Email : ] #{inquire.email}
+                h4 #[strong Address : ] #{inquire.address} , #{inquire.city} 
+                h4 #[strong Phone : ] #{inquire.phone} 
+            hr  
+            h3.underline Order Summary   
+            hr  
+            div.wrap 
+              each product , i in inquire.products  
+                div.wrap-md-4 
+                  div.m-r-1 
+                    h4.mr-3 #[strong Product] #{product.name} 
+                    h4 #[strong Quantity] #{product.quantity}
+                    hr 
+            
+            h3.underline User Question 
+            hr
+            div.col-md-3.mb-3.w-50.user-question.withdrawal 
+              q #{inquire.comment}
+  script(src="/js/easyframer.js")  
+  
+  
+  

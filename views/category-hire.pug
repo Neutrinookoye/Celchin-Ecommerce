@@ -1,0 +1,39 @@
+include includes/celchin-header.pug
+block content 
+  link(rel="stylesheet" , href="/stylesheets/pagination.css")
+  link(rel='stylesheet' , href='/stylesheets/celchin.css')
+  body#hire-page
+    include includes/celchin-navbar.pug
+    div.container-fluid.bg-fain.after-fixed-elem
+      div.row 
+        div.col-md-2.bg-hire
+          h5.pl-3 Hire Categories
+          hr 
+          ul.list-unstyled  
+            li
+              a(class="aside-link" href='/hire/') All
+            each category , i in categories 
+              li 
+                a(class=`aside-link ${cat_active}` href=`/hire/${category.name}`) #{category.name} 
+        div.col-md-10.hire-boxx
+          if products.length > 0 
+            div.row 
+              each product  , i in products 
+                div.col-md-4 
+                  div.hire-card.m-r-1 
+                    img(src=`/products/${product.product.profile}` class="hire-card-img-top")
+                    div.card-body 
+                      strong #{product.product.name}
+                      p Celchin Rental Solutions 
+                      p.hire-card-footer 
+                        a(href=`/hire/${name}/${product.product.name}`) View Hire Options
+          else 
+            p.text-bold Nothing to display yet.
+    
+    script(src="/js/cart.js" type="module")                   
+    include includes/footerDesign.pug   
+
+    include includes/cel-footer.pug  
+  //include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  //script(src="/js/celchin-home.js")

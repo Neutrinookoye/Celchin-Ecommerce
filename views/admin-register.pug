@@ -1,0 +1,35 @@
+include includes/head.pug
+block content
+  body.bg-tax 
+    noscript 
+      h4.white-text Javascript is currently disabled in this browser. Turn it on to access our service 
+    main 
+      section(id="login-form") 
+        div.section-wrapper 
+          div.framer 
+            div.frame(style="padding-top:8rem") 
+              div.fr-md-4 
+              div.fr-12.fr-md-4
+                form(method="post" action="" class="form-shadow bg-white pad-20 m-b-2 radius-5") 
+                  if error  
+                    p(style="color:red") #{error}
+                  h2.center-text  Celchin 
+                  p.center-text Sign up #[br] as super admin  
+                  div.flex.m-b-1 
+                    i(class="fa fa-user bg-tax white-text pad-10 w-50px center-text")
+                    input(type="email"   placeholder="Email" name="email" id="email" class="input input-border-faint pad-10 validate") 
+                  div.flex.m-b-1 
+                    i(class="fa fa-lock bg-tax white-text pad-10 w-50px center-text")
+                    input(type="password"  autocomplete="false" placeholder="Password" name="password" id="password" class="input input-border-faint pad-10 validate") 
+                  //div.flex.m-b-1 
+                    i(class="fa fa-lock bg-tax white-text pad-10 w-50px center-text")
+                    input(type="password"  autocomplete="false" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword" class="input input-border-faint pad-10 validate") 
+                  div.flex.justify-content-between.d-column 
+                    div 
+                      input(type="checkbox" style="margin-right:.25rem" name="remember" value="true") 
+                      label(for="remember" class="label")  Remember me 
+                    a(href="#" class="no-decoration m-b-1") Forgot Password ? 
+                  input(type="submit" class="input input-border-faint pad-10 bg-tax white-text" value="Sign in" id="submit") 
+                  
+              div.fr-md-4
+    script(src="/js/admin-register.js" type="module")  

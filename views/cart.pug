@@ -1,0 +1,52 @@
+include includes/celchin-header.pug
+block content 
+  link(rel="stylesheet" , href="/stylesheets/pagination.css")
+  link(rel='stylesheet' , href='/stylesheets/celchin.css')
+  body#hire-page 
+    include includes/celchin-navbar.pug
+    section
+      .container-fluid.pl-4.pr-4
+        p.mt-4 #[a(href="/" class="small text-bold orange-text") Home > ] #[span.text-bold.small Shopping Cart]
+        div.cart-header
+          h1 Shopping Cart
+    section.bg-grey.mt-4.pt-4
+      div.container-fluid.bg-fain.after-fixed-elem.pl-4.pr-4
+        div.mt-1
+          a(href="/" class="continue") #[i(class="fa fa-angle-left mr-2")] Continue to Shopping
+        .row.bg-white.mt-4.pb-4.pt-3
+          .col-lg-9.col-md-12
+            div(class="product-box ")
+              .row.aaa
+          .col-lg-3.col-md-12
+            div.enquiry-box
+              p #[span Order Summary] #[span.cart-length.float-right]
+              .text-center
+                a(href="#" class="btn btn-orange form-control") Make Enquiries
+                
+              //- div(class="col-md-6 d-flex")
+              //-   img(src="plugins/Assets/Bag.png" alt="Image of a bag" class=" product-img float-right")
+              //-   span(class="pt-3")
+              //-     h5(class="text-muted") 
+              //-       span#aaa 
+              //-     //- p(class="product-description") Black, Strapped 
+                
+              //- div(class="col-md-6")
+              //-   .row
+              //-     div(class="col-6 pt-3")
+              //-       p 
+              //-         span(id="decrement") - 
+              //-         span(id="output") 1 
+              //-         span(id="increment") +
+                    
+              //-     div(class="col-6  pt-3")
+              //-       p(class="payment-amount") &#8358;100,000
+              //-         span(class="float-right") &times;
+                    
+
+          
+       
+  //include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  include includes/footerDesign.pug
+  script(src="/js/cart.js" type="module")
+  script(src="/js/cart-get.js" type="module")

@@ -1,0 +1,41 @@
+include includes/celchin-header.pug 
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;")
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-handshake-o")] Our #[span.orange-text Partners #[i(class="fa fa-angle-right")]] 
+                p The journey to becoming the Power Solution and services provider of choice is never easy. 
+                  | At Celchin, we have realized that market share is never realized unless we are able to
+                  |  provide our end-users with the best in league. To do this, we have tied up with partners,
+                  |  who like us, are leaders in their league. Partners are one of the driving forces for Celchin’s business, 
+                  | as they play a proactive role in product development, pricing and marketing. 
+                  | With the globally growing partner ecosystem, Celchin has been inking pacts with Business Partners to sell,
+                  |  resell and implement its solutions
+                p Some of our existing partners are Alvieer Technologist India, Stamford, Cummins, 
+                  | Scheider, ABB, Seimens, Start Power tools, Songxin Network Accessories,
+                  |  Haitai generators, Sealing power, Batson Nigeria Limited etc
+              
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug
+      script(src="/javascripts/animation.js")

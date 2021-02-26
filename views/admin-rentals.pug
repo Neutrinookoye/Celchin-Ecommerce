@@ -1,0 +1,57 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper  
+                  
+                  div.wrap 
+                    div.wrap-md-12 
+                      if  rents.length > 0  
+                        h2 Hire History 
+                        .table-responsive.prodd
+                          table(class="table table-bordered m-b-1") 
+                            thead 
+                              tr  
+                                th S/N
+                                th UserName  
+                                th Date Created 
+                                th Product Name
+                                th Status 
+                                th Action
+                            tbody
+                              each rent  , i in rents  
+                                -let rentUrl = `/celchin-admin/rentals/${rent._id}` 
+                                - let status = rent.cleared  ? "Cleared" : "Not Cleared"
+                                tr 
+                                  td #{i + 1} 
+                                  td(class="name" data-identifier=rent._id) #{rent.name} 
+                                  td #{rent.dateCreated.toDateString()}
+                                  td #{rent.product.name}
+                                  td #{status}
+                                  td #[input(type="checkbox" class="check")] #[a(href=rentUrl class="action-button" target="_blank") View]                                         
+                        button(class="button no-border no-outline btn-orange white-text m-r-1 " id="clearRent") Clear 
+                        button(class="button no-border no-outline bg-green white-text " id="deleteRent") Delete
+                      else
+                        h3 Nothing to display yet
+    script(src="/js/ordermanager.js" type="module")
+    script(src="/js/easyframer.js")
+    script(src="/js/transactionmanager.js" type="module")
+
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")
+  

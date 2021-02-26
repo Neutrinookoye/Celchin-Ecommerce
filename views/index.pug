@@ -1,0 +1,182 @@
+block content 
+body 
+  include includes/celchin-head.pug
+  h2 Hello Welcome to Celchin 
+  p Your app is ready. Please wait check the configuration settings and light it up again
+  //div.section-wrapper.bg-faint.after-fixed-elem
+    div.wrapper  
+        if 2 > 3 
+          p No advert created yet
+        else 
+          div.wrap.m-b-1  
+            div.wrap-12.wrap-md-12
+              div(class="carousel-box" data-slide-duration="10000" data-slide-image-width="400" data-indicators-background="#bbb" style="position:relative;"  data-use-image-as-background="false" data-content-overlay-image="false")
+                div(class="slide animated-fade" data-carousel-item-size="100")
+                  div(class="slide-number") 1/3 
+                  figure(class="w-100")
+                    img(class="w-100 slide-image radius-10" src="/images/good/Vaccuum cleaner.jpg" alt="") 
+                  div(class="slide-caption") I told you yes 
+                div(class="slide animated-fade" data-carousel-item-size="90")
+                  div(class="slide-number") 2/3 
+                  figure(class="w-100")
+                    img(class="w-100 slide-image radius-5" src="/images/good/warehouse.jpg" alt="") 
+                  div(class="slide-caption") He loved me told you yes
+                div(class="slide animated-fade" data-carousel-item-size="90")
+                  div(class="slide-number") 3/3 
+                  figure(class="w-100")
+                    img(class="w-100 slide-image radius-5" src="/images/good/warehouse.jpg" alt="") 
+                  div(class="slide-caption") I told you yes 
+                a.prev &#10094;
+                a.next &#10095;
+                div.slide-indicators 
+                  span.slide-indicator 
+                  span.slide-indicator 
+                  span.slide-indicator  
+            //div.wrap-md-4
+              if 2 == 3
+                h3 No advert banners 
+              else 
+                div.wrap
+                  div.wrap-6   
+                    img(src="/images/banners/advert1.jpg" alt="Generators" title="Images from celchin" class="w-100 radius-10 s-image")
+                  div.wrap-6.m-b-1
+                    
+                    img(src="/images/banners/advert1.jpg" alt="Generators" title="Images from celchin" class="w-100 radius-10 s-image")
+                  div.wrap-6 
+                    
+                    img(src="/images/banners/advert1.jpg" alt="Generators" title="Images from celchin" class="w-100 radius-10 s-image")
+                  div.wrap-6 
+                    img(src="/images/banners/advert1.jpg" alt="Generators" title="Images from celchin" class="w-100  radius-10 s-image")
+    div.section-wrapper.bg-faint 
+      div.wrapper 
+        h2.bg-dark.white-text.curve-top(style="margin-bottom:0!important;padding:10px;font-size:1rem;") Popular Categories 
+        div.wrap.bg-white 
+          div.wrap-6.wrap-md-4.border-sorround.bg-white 
+            div.flex.no-wrap 
+              h3.m-r-1.pad-top-1.label Computer and accessories 
+              figure.pad-top-1 
+                img(src="/images/good/warehouse.jpg" alt="Generators" title="Images from celchin" class="square") 
+          div.wrap-6.wrap-md-4.border-sorround.bg-white  
+            div.flex.no-wrap 
+              h3.m-r-1.label.pad-top-1 Computer and accessories 
+              figure.pad-top-1 
+                img( src="/images/good/warehouse.jpg" alt="Generators" title="Images from celchin" class="square")  
+          div.wrap-6.wrap-md-4.border-sorround.bg-white  
+            div.flex.no-wrap 
+              h3.m-r-1.label.pad-top-1 Computer and accessories 
+              figure.pad-top-1 
+                img( src="/images/good/warehouse.jpg" alt="Generators" title="Images from celchin" class="square") 
+          div.wrap-6.wrap-md-4.border-sorround.bg-white  
+            div.flex.no-wrap 
+              h3.m-r-1.label.pad-top-1 Computer and accessories 
+              figure.pad-top-1 
+                img( src="/images/good/warehouse.jpg" alt="Generators" title="Images from celchin" class="square") 
+          div.wrap-6.wrap-md-4.border-sorround.bg-white  
+            div.flex.no-wrap 
+              h3.m-r-1.label.pad-top-1 Computer and accessories 
+              figure.pad-top-1 
+                img( src="/images/good/warehouse.jpg" alt="Generators" title="Images from celchin" class="square")  
+    div.section-wrapper.bg-faint.pad-top-1.pad-bottom-1 
+      div.wrapper 
+        section#categories-picture 
+          div.flex-slider 
+            div.slider-mobile-row.m-b-2.wrap-md-3.bg-white 
+              div 
+                figure 
+                  img(  src="/images/good/warehouse.jpg" alt="Generators" title="Images from celchin" class="img-rectangular curve-top") 
+                div.wrapper.pad-bottom-1 
+                  div.h-50 
+                    h3.shop-header Category 
+                    p.shop-description Genuine Category and  
+                  a(href="#" class="shop-link") Visit Shop #[i.fa.fa-chevron-right] 
+            div.slider-mobile-row.m-b-2.wrap-md-3.bg-white 
+              div
+                figure 
+                  img(src="/images/good/warehouse.jpg"  alt="Generators" title="Images from celchin" class="img-rectangular curve-top") 
+                div.wrapper 
+                  div.h-50
+                    h3.shop-header Category 
+                    p Genuine Category  
+                  a(href="" class="shop-link") Visit Shop #[i.fa.fa-chevron-right] 
+            div.slider-mobile-row.m-b-2.wrap-md-3.bg-white 
+              div
+                figure 
+                  img(src="/images/good/warehouse.jpg" alt="Generators" title="Images from celchin" class="img-rectangular curve-top") 
+                div.wrapper.pad-bottom-1 
+                  h3 Category 
+                  p Genuine Category  
+                  a(href="" class="") Visit Shop #[i.fa.fa-chevron-right] 
+            div.slider-mobile-row.m-b-2.wrap-md-3.bg-white 
+              div.hire-card 
+                figure 
+                  img(src="/images/good/warehouse.jpg"  alt="Generators" title="Images from celchin" class="img-rectangular curve-top") 
+                div.wrapper.pad-bottom-1 
+                  h3 Category 
+                  p Genuine Category  
+                  a(href="" class="") Visit Shop #[i.fa.fa-chevron-right] 
+            div.slider-mobile-row.m-b-2.wrap-md-3.bg-white 
+              div.hire-card 
+                figure 
+                  img(src="/images/good/Bottle chain - Copy.png" alt="Generators" title="Images from celchin" class="img-rectangular curve-top") 
+                div.wrapper.pad-bottom-1 
+                  h3 Category 
+                  p Genuine Category  
+                  a(href="" class="") Visit Shop #[i.fa.fa-chevron-right]
+    div.section-wrapper.bg-faint.pad-top-1.pad-bottom-1 
+      div.wrapper
+        section#partners 
+          div.wrap 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text 
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text 
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text  
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text  
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular")  
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text  
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text 
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular")
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular") 
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+                //img(src="/images/good/warehouse.jpg" alt="" title="" class="img-rectangular")  
+            div.wrap-2.border-sorround.bg-white.pad-top-1.center-text
+              figure 
+                i.fa.fa-facebook.bg-white.dark-text.center-icon
+  //section(id="about-celchin") 
+    div 
+      div.bg-white.shadow.radius-5.pad-20 
+        h3.label Celchin - The Number one stop for good generators in Nigeria 
+  include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  script(src="/js/celchin-home.js")

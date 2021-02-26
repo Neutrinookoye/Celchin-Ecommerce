@@ -1,0 +1,20 @@
+block content 
+body 
+  include includes/celchin-head.pug 
+  
+  
+  div.wrapper.center-text
+    div#app 
+    div.wrap.after-fixed-elem 
+      div.wrap-md-4 
+        form(method="Post" class="bg-white shadow pad-20")  
+          h2.m-b-1 Handling Ajax Request 
+          label(for="username") User Name 
+          input(type="text" class="input input-border-faint m-b-1" id="userName" name="userName")
+          label(for="email") Email 
+          input(type="email" class="input input-border-faint m-b-1" id="email" name="email") 
+          input(type="submit" class="input input-border-faint white-text bg-dark" value="Register" id="submit") 
+      div.wrap-md-2 
+      div.wrap-md-4 
+        button(class="button no-border no-outline bg-red white-text") Get Students 
+  script(src="/js/ajax.js")

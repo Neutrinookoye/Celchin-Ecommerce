@@ -1,0 +1,88 @@
+include includes/celchin-header.pug
+block content 
+  link(rel="stylesheet" , href="/stylesheets/pagination.css")
+  link(rel='stylesheet' , href='/stylesheets/celchin.css')
+  body 
+    include includes/celchin-navbar.pug
+    div.section-wrapper.bg-fain.after-fixed-elem
+      div.container-fluid#single-hire
+        div.row 
+          div.col-md-6 
+            div.box1
+              figure 
+                img(class="img-responsive " src=`/products/${product.profile}` alt=`${product.name}`) 
+              h3 #{targetProduct.product.name}
+              p #{targetProduct.product.description}
+              strong Specifications 
+              ul 
+                li #{targetProduct.product.specification}
+          .col-md-6
+            div.form-section 
+              h3.sell-prompt Enter the generator details 
+              form(method="post" class="shadow bg-white radius-5 pad-20 form-horizontal" data-category=categoryName data-product=productName id="hireForm" ) 
+                div.row
+                  div.col-md-6 
+                    div.m-r-1 
+                      label(for="First Name") Name #[span.red *] 
+                      input(class="input form-control hire" type="text" id="name" name="name") 
+                  div.col-md-6 
+                    label(for="email") Email #[span.red *] 
+                    input(class="input form-control hire" type="email" id="email" name="email") 
+                  div.col-md-6 
+                    div.m-r-1 
+                      label(for="Phone") Phone #[span.red *] 
+                      input(class="input form-control hire" type="tel" id="phone" name="mobile") 
+                  div.col-md-6 
+                    label(for="State of Residence") Address 
+                    input(class="input form-control hire" id="address" name="address") 
+                  div.col-md-6 
+                    div.m-r-1 
+                      label(for="Product Name") Hire From Date  
+                      input(class="input form-control hire" type="date" id="fromDate" name="fromDate") 
+                  div.col-md-6 
+                    label(for="manufacturer") Hire From Time 
+                    input(class="input form-control hire" type="time" id="fromTime" name="fromTime") 
+                  div.col-md-6 
+                    div.m-r-1 
+                      label(for="Product Name") Date to Return   
+                      input(class="input form-control hire" type="date" id="toDate" name="toDate") 
+                  div.col-md-6 
+                    label(for="manufacturer") Time to Return  
+                    input(class="input form-control hire" type="time" id="toTime" name="toTime") 
+                  div.col-md-12
+                    div 
+                      label(for="description") Extra Note  
+                      textarea(class="input form-control hire"  id="comment" name="comment") 
+                  ///div.col-md-12 
+                    div.m-r
+                      label(for="email") Cost Price 
+                      input(class="input input-border-faint pad-10 m-b-1" type="text" id="price" name="price")
+                  //div.col-md-12 
+                    label(for="email") Attach Images #[span.red &times;] 
+                    input(class="input input-border-faint pad-10 m-b-1" type="file" id="avatar" name="avatar") 
+                  .col-md-12.pt-4
+                    button(class="input text-white btn btn-orange" type="submit" id="hireNow" name="submit") Hire Now 
+        if similarProducts.length > 1
+          div.related-para
+            h5 Related Products 
+            hr 
+            div.row  
+              each product , i in similarProducts 
+                if product.product.name !== productName 
+                  div.col-md-3
+                    .card-shadow
+                      img(src=`/products/${product.product.profile}` class="rel-img")
+                      div.card-body.pt-1
+                        i Celchin Rental Solutions
+                        p.text-bold #{product.product.name}
+                        a(class="hire-card-footer" href=`/hire/${categoryName}/${product.product.name}`) View Hire Options
+
+
+
+    script(src="/js/cart.js" type="module")                   
+    include includes/footerDesign.pug   
+    include includes/cel-footer.pug  
+
+  //include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  script(src="/js/transactionmanager.js" type="module") 

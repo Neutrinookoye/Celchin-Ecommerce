@@ -1,0 +1,61 @@
+include includes/celchin-header.pug
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body
+        include includes/celchin-navbar.pug
+        main(id="main")
+            .container-fluid
+                div(class="single-product")
+                    div(class="info")
+                        h3.pb-3 #{product.name}
+                    .card-shadow.p-4
+                        .row
+                            .col-md-7
+                                .text-center
+                                    img(src=`/products/${product.profile}` alt="product image" class="prod-img")
+                            .col-md-5.hh
+                                h4 #{product.description}
+                                p.category_txt.review.mt-4 #[i(class="fa fa-star")] #[i(class="fa fa-star")] #[i(class="fa fa-star")] #[i(class="fa fa-star")] 7 Reviews
+                                - let specifications = product.specification.split(",")
+                                hr 
+                                h4 Specifications 
+                                ul
+                                each spec in specifications 
+                                    li #{spec}
+                                div.content-div
+                                    hr
+                                    p
+                                        a(data-name=`${product.name}` data-code=`${product._id}` href="#" class=" cart-item btn buy_btn") Add to cart
+                div.recommended
+                    .card.mt-4
+                        .card-header
+                            h5 Related Products
+                        .card-body
+                            
+                            .row.row-mobile 
+                                if similarProducts.length > 0
+                                    each similarProduct , i in similarProducts 
+                                        if similarProduct.product.productCode !== productCode 
+                                            .col-lg-4.col-md-6  
+                                                a(href=`/shop/product/${similarProduct.product.productCode}`)
+                                                    .box
+                                                        .row
+                                                            .col-xl-4.col-lg-12 
+                                                                img(src=`/products/${similarProduct.product.profile}` class="" alt=`/products/${similarProduct.profile}`)
+                                                            .col-xl-7.col-lg-12 
+                                                                div.prod-box
+                                                                    p.prod-head.mb-0 #{similarProduct.product.name}
+                                                                    p.prod-para-box.mb-0 #[i(class="fa fa-quote-left")]
+                                                                        p.prod-para #{similarProduct.product.description.substr(0 , 80)}...
+                                                                    //- p.category_txt.review.mt-4 #[i(class="fa fa-star")] #[i(class="fa fa-star")] #[i(class="fa fa-star")] #[i(class="fa fa-star")] 7 Reviews
+                                                                p.text.right
+                                                                    a(href=`/shop/product/${similarProduct.product.productCode}` class="btn btn-primary link") View
+
+                                    
+
+
+
+        
+        script(src="/js/cart.js" type="module")
+        include includes/footerDesign.pug
+        include includes/cel-footer.pug

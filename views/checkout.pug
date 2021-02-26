@@ -1,0 +1,41 @@
+block content 
+body 
+  include includes/celchin-head.pug
+  div.section-wrapper.bg-fain.after-fixed-elem
+    div.wrapper 
+      div.wrap 
+        div.wrap-md-2
+        div.wrap-md-8
+          h1.underline Products summary
+          hr
+          div#inquire-root 
+          hr
+          h2.text-left Fill the inquiry form below 
+          form(class="form-horizontal" method="post") 
+            div.wrap 
+              div.wrap-md-6  
+                div.m-r-1
+                  label(for="name") Name   
+                  input(type="text" class="input input-border-faint m-r-1 ma m-b-1" name="name" id="name" required) 
+              div.wrap-md-6 
+                label(for="email") Email    
+                input(type="email" class="input input-border-faint ma m-b-1" name="email" id="email" required) 
+              div.wrap-md-6  
+                div.m-r-1 
+                  label(for="address") Address    
+                  input(type="text" class="input input-border-faint ma m-b-1" name="address" id="address" required) 
+              div.wrap-md-6 
+                label(for="phone") Phone  
+                input(type="tel" class="input input-border-faint ma m-b-1" name="phone" id="phone" required) 
+              div.wrap-md-12 
+                label(for="question") Question 
+                textarea(class="input input-border-faint ma m-b-1" name="comment" id="comment")
+                               
+              input(type="submit" class="input input-border-faint btn-inquire bg-blue-dark  white-text m-b-3" id="inquire" value="Inquire") 
+                                
+          
+          
+       
+  //include includes/home-footer.pug 
+  //script(src="/js/carousel.js") 
+  script(src="/js/cart.js" type="module")

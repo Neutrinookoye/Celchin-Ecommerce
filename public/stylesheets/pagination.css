@@ -1,0 +1,111 @@
+/*--============ Pagination Buttons ===================--*/
+.holder {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: flex-end;
+}
+
+.holder a {
+    font-size: .9rem;
+    cursor: pointer;
+    margin: 0 3px 5px 3px;
+    color: #17202A;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 3px 8px;
+}
+
+.holder a:hover {
+    color: #BA4A00;
+    text-decoration: none;
+}
+.holder a:focus{
+    text-decoration: none;
+}
+
+.holder a.jp-previous { 
+    margin-right: 10px; 
+    background: #BA4A00 !important;
+    padding: 4px 8px !important;
+    color: #fff !important;
+}
+.holder a.jp-next { 
+    margin-left: 10px; 
+    background: #BA4A00 !important;
+    padding: 4px 8px !important;
+    color: #fff !important;
+}
+
+.holder a.jp-current {
+    color: #BA4A00 !important;
+    border: 1px solid #BA4A00 !important;
+    font-weight: bold;
+}
+
+.holder a.jp-disabled, a.jp-disabled:hover {
+    color: #bbb;
+}
+
+.holder a.jp-current, a.jp-current:hover,
+.holder a.jp-disabled, a.jp-disabled:hover {
+    cursor: default;
+    background: none;
+}
+.holder span { margin: 0 5px; }   
+
+/* --========== Pagination Content ====================-- */
+.content ul#itemContainer {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.content ul#itemContainer li .box{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px 10px 15px 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.content ul#itemContainer li .head{
+    font-weight: 600;
+}
+.content ul#itemContainer li .spec{
+    font-size: .9rem;
+}
+.content ul#itemContainer li .review{
+    font-size: .8rem;
+}
+.content ul#itemContainer li a{
+    font-size: .9rem;
+    color: #fff;
+    padding: 5px 15px;
+    background: #17202A;
+    border-radius: 5px;
+}
+   
+   
+/* Neutrino's pagination styles */
+.page-box a{
+    color: white;
+    background: #BA4A00;
+    padding: .2rem 1rem .1rem 1rem;
+    font-size: .8rem;
+}
+.page-box .first {
+    border-radius: .3rem 0 0 .3rem;
+}
+.page-box .second {
+    border-radius: 0 .3rem .3rem 0;
+}
+.page-box .pageNm {
+    color: #333;
+    padding: .2rem 1rem;
+    border: 1px solid #ccc;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+
+   
+   

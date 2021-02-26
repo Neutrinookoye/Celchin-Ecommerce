@@ -1,0 +1,90 @@
+include includes/celchin-header.pug 
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;")
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+                  
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-lightbulb-o")] CELCHIN #[span.orange-text SOLAR #[i(class="fa fa-angle-right")] ]     
+                p At Celchin, we are creating a planet run by the sun. When more power is required, 
+                  | we can connect both the grid, generator and solar with our automatic load management. 
+                  | This feature will make your system more economical. Remarkable savings on diesel, 
+                  | when user end is low, system will automatically switch to solar as per demand. 
+                  | We provide a number of integrated services that allow us to offer a full turnkey solution. 
+                  | It is these services that are central to our reputation and success, delivered by our experienced 
+                  | and professional staff focused on accomplishing the best long term solution for your business.
+                div.hide
+                  p Each of our services offer specialist expertise and consultancy and work in collaboration to deliver
+                    |  a bespoke solution for your business. From the initial site survey, right through to design, 
+                    | project management and installation, with Celchin each part of your journey will be supported by 
+                    | the industry’s leading professionals and solutions.
+                  p We Combines the benefits of multiple energy technologies onsite to help businesses run 
+                    | a site as a smart grid to generate and store their own electricity for financial &amps;
+                    |  Sustainability benefits.
+                  p #[strong Our services : ]
+                  ul 
+                    li Commercial Solar
+                    li Domestic Solar Systems
+                    li LED Lighting for your Commercial Project
+                    li Battery Storage
+                    li Electrical Engineering Specialist's
+                    li Electric Charging Points
+                    li De Stratification Fans
+                    li Air Source Heat Pumps
+                  p Below is an overview of the other key services that create our full turnkey solution;
+                  h3 Design &amp; Engineering 
+                  p After discussing the bespoke nature of your buildings and business goals to determine the 
+                    | best approach and technologies, our design team use specialist software to engineer solutions
+                    |  by modeling your company premises and creating electrical schematics
+                  h3 Power Purchase Agreement
+                  p We respect that not every client is looking to use their own capital to fund energy technology 
+                    | solutions; that’s why we continually research the market and build relationships to ensure we can 
+                    | support your business by connecting you with the right finance partners. 
+                    | This includes some investors where you can install at zero cost in exchange for competitive,
+                    |  long term fixed energy prices.
+                  h3 Product Procurement 
+                  p Our procurement team ensures that we can always offer the industry’s leading products at the best 
+                    | prices. This includes ‘tier 1’ solar panels, mounting frames, inverters and monitoring systems. 
+                    | We work closely with some of the industry’s biggest manufacturers including Schneider, ABB, 
+                    | Cummins, Fronius, Clenergy and SolarEdge that often give direct support into the design of our 
+                    | solutions.
+                  h3 Project Management 
+                  p Your installation will be assigned its own project manager, directly employed by Celchin, 
+                    | and will be your main point of contact and communication onsite during the project.
+                    |  All of our project managers originated from an installation team and understand first-hand 
+                    | the technicalities of installing, allowing them to manage and supervise installation teams 
+                    | more effectively.
+                  h3 Installation 
+                  p We pride ourselves on delivering a quality installation that continues to raise industry standards. 
+                    | Lead by our own project manager, we work with a trusted number of installation partners that are fully 
+                    | audited and trained to deliver quality workmanship and employ the highest health and safety practices. 
+                    | We always operate to ensure minimal disruption to your business during installation.
+                  h3 Operation &amp; Maintenance
+                  p Our operation and maintenance team provide a comprehensive service to ensure that your energy
+                    | technology solution continues to deliver year-on-year benefits by implementing a monitoring 
+                    | service that alerts us to immediately remedy any issues that may occur over time. 
+                    | This may be low generation caused by a panel or inverter fault or often issues external to the system.
+                button(type="button" class="button toggle-less" role="button") Show more
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug 
+      script(src="/javascripts/animation.js")

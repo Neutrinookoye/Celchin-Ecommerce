@@ -1,0 +1,65 @@
+include includes/celchin-header.pug 
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;")
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+                  
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-gears")] CELCHIN ENGINEERING #[span.orange-text / TECHNICAL SERVICE #[i(class="fa fa-angle-right")] ]  
+                p At Celchin we have the experience and knowledge to help you with any backup power solution and 
+                  | will ensure you get the generator, spare parts, solar items or accessories which matches your 
+                  | requirements, we offer a complete service including installation, maintenance, generator &amps; 
+                  | solar accessories removal. We will ensure you have the systems in place and ready for any emergency. 
+                  |  Celchin understand that when you are sourcing a solar accessories, diesel or gas generator, that the
+                  |  quality, availability, fuel consumption, budget, or emissions can play a vital role is decision 
+                  |  making and we can recommend the generator and solar accessories that is most suited to your needs.
+                p We offer a wide selection of diesel and gas generators in a wide selection of sizes both open and 
+                  | canopied and from a range of manufacturers to help you find the solution for your requirements. 
+                  | If you need a reliable power solution, solar system, spare parts and filters or can't see the right
+                  |  generator or solar panels please let us get in touch and our team will help you find what you need.
+                div.hide
+                  p Diesel generators are used in many industries from retail, offices, factories, hospitals, 
+                    | data centers and other services, because of their outstanding reliability, cost effectiveness and 
+                    | flexibility. Each of our used generators is tested by our highly qualified technicians to ensure it 
+                    | completes a series of tests and inspections, allowing you to purchase with peace of mind. 
+                    | Celchin can supply, install, commission and service your used generator. 
+                    | If you are looking for a specific used item but can't see what you are looking for please get in
+                    |  touch, as we may be able to source it or find a similar item for you.
+                  p Other services include : 
+                    ul 
+                      li 	Engine/ Alternator Overhauling 
+                      li  Cylinder head, Water pump, Fuel pump, Injectors Overhauling
+                      li  Oil sample analysis
+                      li  Generator and Engine Monitoring Protection and Control Systems
+                      li  Calibration/Power tools maintenance
+                      li  Safety Maintenance
+                      li  Global company Service Centre Standard
+                      li  Generator/Alternator Training
+                      li  Generator Load test, Installation and Commissioning
+                      li  Power Calculation and Load profile survey
+                      li Electrical wiring 
+                button(type="button" class="button toggle-less" role="button") Show more 
+            
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug
+      script(src="/javascripts/animation.js")

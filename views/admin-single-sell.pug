@@ -1,0 +1,32 @@
+include includes/bigjara-head.pug 
+link(rel="stylesheet" href="/css/blog.css")
+block content 
+body.bg-fainted  
+  section(class="d-wrapper")
+    include includes/sidebar.pug 
+    main.main(style="width:100%")
+      include includes/admin-nav.pug 
+      div.wrapper  
+        div.wrap.justify-content-between  
+          div.wrap-md-10
+            h2 Customer Information 
+            h4 #[strong Name : ] #[span #{sell.name}]
+            h4 #[strong  Email : ] #{sell.email}
+            h4 #[strong Address : ] #{sell.state} 
+            h4 #[strong Phone : ] #{sell.phone} 
+            h2 Product Information 
+            h4 #[strong Product Name : ] #{sell.productName} 
+            h4 #[strong Manufacture : ] #{sell.manufacturer} 
+            h4 #[strong Price : ] &#8358;#{sell.amount.toLocaleString()} 
+            div  #[strong Description : ] 
+              p #{sell.description}  
+            h2 Product Gallery 
+            div.wrap.m-b-1 
+              each photo in sell.uploads
+                div.wrap-md-3.m-b-1 
+                  div.hire-card 
+                    img(src=`/selling-generator/${photo}` class="hire-card-img-top")
+
+
+  script(src="/js/easyframer.js")
+  

@@ -1,0 +1,165 @@
+include includes/bigjara-head.pug 
+block content
+  link(rel="stylesheet" href="/stylesheets/dashboard.css")
+  link(rel="stylesheet" href="/css/blog.css")
+  body.bg-fainted 
+    .loader-bg
+      .loader-track
+        .loader-fill
+    include includes/new-sidenav.pug 
+    include includes/new-usernav.pug
+    .pcoded-main-container
+      .pcoded-wrapper
+        .pcoded-content
+          .pcoded-inner-content
+            section(class="d-wrapper")
+              main.main(style="width:100%")
+                div.wrapper  
+                  div.wrap.justify-content-between  
+                    div.wrap-md-12.wrap-12
+                      div(style="margin-right:30px") 
+                        h4 Create a new ad campaign
+                        form(class="" name="" method="POST" enctype="multipart/form-data")  
+                          div.wrap.justify-content-between
+                            .wrap-md-6.wrap-12.p-1
+                              input(class="input wa input-border-faint pad-input m-b-1" type="text" name="title"  id="title" required placeholder="Enter campaign title") 
+                            .wrap-md-6.wrap-12.p-1
+                              input(class="input wa input-border-faint pad-input m-b-1" type="text" name="duration"  id="duration" required placeholder="Enter the duration in days") 
+                          
+                          input(class="input wa input-border-faint pad-input m-b-1 wrap-md-12" type="file" name="avatar"  id="avatar" required) 
+                          //- input(class="input input-border-faint pad-input m-b-1" type="file" name="title" id="title" required placeholder="Enter post title")
+                          //p #[strong permalink:] #[a(href="") http://localhost/posts/demo] 
+                          div 
+                            //div.wrap.justify-content-between.m-b-2.bot 
+                              div 
+                                a(href="" class="button no-border no-outline bg-white radius-5 shadow") #[i.fa.fa-music] Add media 
+                              div 
+                                a(href="" class="m-r-1 no-border no-outline bg-fainted shadow pad-10" id="visual") Visual
+                                a(href="" class="no-border no-outline bg-submit white-text shadow pad-10" id="text") Text 
+                            div.wrap-justify-content-between.m-b-1 
+                              div.wrap.justify-content-between.editor-icons
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="bold") #[i.fa.fa-bold] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="italic") #[i.fa.fa-italic] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="delete") #[i.fa.fa-trash] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="indent") #[i.fa.fa-indent] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="outdent") #[i.fa.fa-outdent]  
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="strikeThrough") #[i.fa.fa-strikethrough] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="justifyLeft") #[i.fa.fa-align-left] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="justifyCenter") #[i.fa.fa-align-center]
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="justifyRight") #[i.fa.fa-align-right]
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="subscript") #[i.fa.fa-subscript]
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="superscript") #[i.fa.fa-superscript] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="insertUnorderedList") #[i.fa.fa-list-ul] 
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="insertOrderedList") #[i.fa.fa-list-ol] 
+                                div.editor-wrap-1(style="position:relative") 
+                                  button(class="mw-r-1 no-border no-outline" id="createLink") #[i.fa.fa-link] 
+                                  div#link.d-nothing(style="position:absolute;top:0;left:-120px;background:#f00;z-index:3" )
+                                    input(class="input input-border-faint" id="linkHref"  style="background:#fff;border:1px solid #000") 
+                                    
+                                div.editor-wrap-1 
+                                  button(class="mw-r-1 no-border no-outline" id="insertImage") #[i.fa.fa-picture-o]
+                              
+                                div.editor-wrap-1
+                                  button(class="no-border no-outline" id="insertParagraph") #[i.fa.fa-paragraph] 
+                                div.editor-wrap-1 
+                                  button(class=" no-border no-outline" id="underline") #[i.fa.fa-underline]
+                                div.editor-wrap-1(style="position:relative") 
+                                  button(class=" no-border no-outline" id="fontName") #[i.fa.fa-font]
+                                  select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="fonts" selected="Arial") 
+                                    option(value="Arial" selected) Arial
+                                    option(value="Arial") Arial
+                                    option(value="Georgia") Georgia 
+                                    option(value="Times New Roman") Times New Roman 
+                                    option(value="Verdana") Verdana 
+                                    option(value="monospace") Monospace 
+                                    option(value="Courier") Courier
+                                div.editor-wrap-1(style="position:relative")  
+                                  button(class=" no-border no-outline" id="fontSize") 14px
+                                  select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="size" selected="1") 
+                                    option(value="1" selected) 1
+                                    option(value="2") 2
+                                    option(value="3") 3
+                                    option(value="4") 4
+                                    option(value="5") 5
+                                    option(value="6") 6 
+                                    option(value="7") 7
+                                div.editor-wrap-1(style="position:relative")  
+                                  button(class=" no-border no-outline" id="fillTrigger") Fill 
+                                  select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="fill" selected="#f00") 
+                                    option(value="#f00" selected) #[span(style="background:#f00;padding : 8px 12px;color:#fff") ] Red
+                                    option(value="blue") #[div(style="background:blue;padding : 8px 12px;color:#fff;width=10px;height:10px") ] Blue
+                                    option(value="green") #[span(style="background:green;padding : 8px 12px;color:#fff") ] Green
+                                    option(value="yellow") #[span(style="background:yellow;padding : 8px 12px;color:#fff") ] Yellow
+                                    option(value="orange") #[span(style="background:orange;padding : 8px 12px;color:#fff") ] Orange
+                                    option(value="pink") #[span(style="background:pink;padding : 8px 12px;color:#fff") ] Pink
+                                    option(value="purple") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") ] Purple
+                                    option(value="white") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") white ] 
+                                div.editor-wrap-1(style="position:relative")  
+                                  button(class=" no-border no-outline" id="colorTrigger") Color
+                                  select(style="position:absolute;top:0;left:0;" class="input input-border-faint d-nothing" id="color" selected="#f00") 
+                                    option(value="#f00" selected) #[span(style="background:#f00;padding : 8px 12px;color:#fff") ] Red
+                                    option(value="blue") #[span(style="background:blue;padding : 8px 12px;color:#fff") ] Blue
+                                    option(value="green") #[span(style="background:green;padding : 8px 12px;color:#fffwidth=10px;height:10px") ] Green
+                                    option(value="yellow") #[span(style="background:yellow;padding : 8px 12px;color:#fff") ] Yellow
+                                    option(value="orange") #[span(style="background:orange;padding : 8px 12px;color:#fff") ] Orange
+                                    option(value="pink") #[span(style="background:pink;padding : 8px 12px;color:#fff") ] Pink
+                                    option(value="purple") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") ] Purple
+                                    option(value="white") #[span(style="background:purlpe;padding : 8px 12px;color:#fff") ] White
+                                div.editor-wrap-1 
+                                  button(class=" no-border no-outline") #[i.fa.fa-share] 
+                                div.editor-wrap-1 
+                                  button(class=" no-border no-outline" id="removeFormat") #[i.fa.fa-forward] 
+                            h3 Description
+                            div(class="content-area editor-style  no-margin" contenteditable="true" id="content")  
+                            //div.wrap.justify-content-between.word-counter.m-b-2 
+                              div.m-b-1 
+                                p Word count #[strong.words 0] 
+                              div 
+                                p Last modified by Adeleke Bright on Saturday 26th September , 2020
+                            div(style="text-align:righ")
+                              button(class="no-border m-b-2 no-outline button btn-orange white-text shadow radius-5" id="save") Save 
+                    div.wrap-md-12.pad-top.wrap-12
+                      if ads.length > 0 
+                        h4  List of Available Products
+                        .table-responsive.prodd
+                          table(class="table table-bordered") 
+                            thead 
+                              tr.text-center
+                                th S/N 
+                                th Title   
+                                th Date Created 
+                                th Duration 
+                                th Remove
+                                th Edit 
+                            tbody 
+                              each  ad , i in ads 
+                                tr.text-center
+                                  td #{i + 1}  
+                                  td #[a(href=`/celchin-admin/ad-manager/${ad.title}`) #{ad.title}] 
+                                  td #{ad.dateCreated.toLocaleDateString()} 
+                                  td #{ad.duration}
+                                  td #[button(class="trash-red" data-identifier=ad._id) #[i.fa.fa-trash] ] 
+                                  td #[a(href=`/celchin-admin/ad-manager/${ad.title}/edit` class="pen-green") #[i.fa.fa-pencil] ] 
+
+    script(src="/js/admanager.js" type="module")
+    script(src="/js/easyframer.js")
+    script(src="/js/transactionmanager.js" type="module")
+
+    script(src="/javascripts/vendor-all.min.js")
+    script(src="/plugins/select2/select2.min.js")
+    script(src="/javascripts/library/select.js")
+    script(src="/plugins/bootstrap/js/bootstrap.min.js")
+    script(src="/javascripts/pcoded.min.js")

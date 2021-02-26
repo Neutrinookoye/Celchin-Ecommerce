@@ -1,0 +1,64 @@
+include includes/celchin-header.pug 
+block content
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body(style="background : #f2f2f2;")
+      include includes/celchin-navbar.pug
+        div(class="min-page" style="margin-bottom:8rem;")
+          section#intro
+            div(id="topCarousel" class="carousel slide first-carousel wow fadeIn" data-ride="carousel")
+              ol(class="carousel-indicators")
+                li(data-target="#topCarousel" data-slide-to="0" class="active" id="carouselly")
+                li(data-target="#topCarousel" data-slide-to="1" id="carouselly")
+                //- li(data-target="#topCarousel" data-slide-to="2" id="carouselly")
+              .carousel-inner.ss
+                .carousel-item.active
+                  img(src="/images/good/warehouse.jpg" class="first-slide" alt="")
+                .carousel-item
+                  img(src="/images/new/1554102458176.jpg" class="first-slide" alt="")
+              a(class="carousel-control-prev" href="#topCarousel" role="button" data-slide="prev")
+                  span(class="carousel-control-prev-icon" aria-hidden="true")
+              a(class="carousel-control-next" href="#topCarousel" role="button" data-slide="next")
+                  span(class="carousel-control-next-icon" aria-hidden="true")
+          div(class="container mt-5  about-box")
+            div(class="row")
+              div(class="col-md-12 wow fadeInLeft")
+                h2.text-left #[i(class="fa fa-bus")] CELCHIN #[span.orange-text LOGISTICS #[i(class="fa fa-angle-right")]]
+                p Celchin Nigeria Limited is supplier of third part logistics, for generator spare , 
+                  | for any scenario from a small generator or solar running 1 item to a shopping Centre, parts, solar accessories, Filters, Electrical and Mechanical accessories.  
+                p Celchin has set the industry standard for service and quality in the industries logistics. 
+                  | Celchin is a provider of third-party logistics services, handling goods inwards 
+                  | (including imported containers that require MAF certification to unseal), warehousing, 
+                  | and goods outwards services.  Generator parts, Solar parts, Suppliers of filters, Spare parts,
+                  | accessories, cables, connectors, power supplies and electrical finished products - primarily to the 
+                  | generator or solar repair technician, who is Celchin’s main customer.
+                p When the repair technician services a customer's generator, solar systems or 
+                  | any electrical equipment’s, after establishing what is wrong, he orders a part from Celchin. 
+                  | Staff takes the order, pick the stock from the warehouse, and dispatch it to the customer, 
+                  | by same-day or overnight delivery.
+                p Celchin provides logistic support and distributes parts for the Warehouse, 
+                  | Inventory Store and on site emergency response. Celchin now supplies, solar panels, 
+                  | inverter, batteries, gas engines Spark plugs, cables, Filters, distribution systems, 
+                  | Lubricants, generator spare parts both minor and major components, wholesalers and the general 
+                  | public throughout Nigeria and across the country.
+                
+                //- div(class="col-md-6 hide-sm")
+                //- .row
+                //-   .col-md-12.text-center
+                //-     img(src="/images/elemax1.jpg", alt="" width="60%")
+                //-   .col-sm-2
+                //-     img(src="/images/elemax1.jpg", alt="" width="100%")
+                //-   .col-sm-2
+                //-     img(src="/images/elemax1.jpg", alt="" width="100%")
+                //-   .col-sm-2
+                //-     img(src="/images/elemax1.jpg", alt="" width="100%")
+                //-   .col-sm-2
+                //-     img(src="/images/elemax1.jpg", alt="" width="100%")
+                //-   .col-sm-2
+                //-     img(src="/images/elemax1.jpg", alt="" width="100%")
+                //-   .col-sm-2
+                //-     img(src="/images/elemax1.jpg", alt="" width="100%")
+      script(src="/js/cart.js" type="module") 
+      script(src="/javascripts/more-less.js")
+      include includes/footerDesign.pug
+      include includes/cel-footer.pug 
+      script(src="/javascripts/animation.js")

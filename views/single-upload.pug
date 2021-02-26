@@ -1,0 +1,15 @@
+block content 
+body 
+  include includes/celchin-head.pug 
+  main 
+    h2 Welcome to Cloud Storage For updating files in a bucket 
+    div.wrapper 
+      div.wrap 
+        div.wrap-md-4  
+          figure 
+            img(src=upload.fileUrl class="w-100")
+          form(method="Post" enctype="multipart/form-data" class="pad-20 bg-white shadow") 
+            label(for="file") File 
+            input(type="file" name="avatar" id="avatar" class="input input-border-faint pad-10 m-b-1") 
+            input(type="submit" value="Upload" class="input bg-dark white-text pad-10 input-border-faint") 
+        div.wrap-md-8 

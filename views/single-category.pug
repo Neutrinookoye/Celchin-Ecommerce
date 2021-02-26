@@ -1,0 +1,21 @@
+include includes/bigjara-head.pug 
+link(rel="stylesheet" href="/css/blog.css")
+block content 
+body.bg-fainted  
+  section(class="d-wrapper")
+    include includes/sidebar.pug 
+    main.main(style="width:100%")
+      include includes/admin-nav.pug 
+      div.wrapper  
+        div.wrap.justify-content-between  
+          div.wrap-md-6
+            h2.text-center.m-b-1.uppercase #{category.name} 
+            div.w-100.m-b-1 
+              figure 
+                img(class="w-100" src=`${category.profile}` alt=`${category.name} Logo`) 
+            h3.uppercase Description 
+            //div #{category.description} 
+            div(data-identifier=`${category._id}` id="postContent" class="m-b-1")
+              
+  script(src="/js/easyframer.js")
+  script(src="/js/grabContent.js" type="module")
