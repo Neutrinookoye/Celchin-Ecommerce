@@ -40,6 +40,19 @@ class App {
             })
         }
     } 
+
+        // Get images in full screen when you click on them in the landing page
+        getFullImage = async (req , res) => {
+
+            const product = await Product.findById(req.params.id)
+            const hire = await Rent.findById( req.params.id )
+            console.log(hire)
+            res.render('fullImage-page' , {
+                product , hire
+            })
+        }     
+
+
     getReviews = async (req , res) => {
         try {
             res.send("My review page is coming up")
@@ -498,6 +511,7 @@ class App {
                 categories : await Category.find({}).populate("addedBy") || []
             })
         }
+
     
 } 
 

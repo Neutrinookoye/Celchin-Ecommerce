@@ -1,0 +1,26 @@
+include includes/celchin-header.pug
+block content 
+    link(rel='stylesheet' , href='/stylesheets/celchin.css')
+    body
+        section.fullImg-div
+            .container-fluid
+                div 
+                    .d-flex.justify-content-between 
+                        div 
+                            a(href="/" class='x') #[i(class='fa fa-close')]
+                        div 
+                            i(class='fa fa-search-plus mr-3' id='zoomIn')
+                            i(class='fa fa-search-minus' id='zoomOut')
+
+                if product
+                    .fullImg
+                        img(src=`/products/${product.profile}` id='fullImg' alt="image of product")
+
+                if hire
+                    .fullImg
+                        img(src=`/products/${hire.profile}` id='fullImg' alt="image of product")
+
+
+        include includes/footerDesign.pug
+        include includes/cel-footer.pug 
+        script(src="/js/index.js" type="module")

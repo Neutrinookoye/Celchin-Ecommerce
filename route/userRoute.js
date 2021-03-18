@@ -2,6 +2,7 @@ const express     = require("express")
 const router      = express.Router() 
 const UserController = require("../controller/userController")  
 const FileController = require("../controller/fileController")  
+const { getFullImage } = require("../controller/userController")
 
 router.get("/reviews" , UserController.getReviews) 
 //--- SELL MANAGEMENT 
@@ -40,5 +41,9 @@ router.get("/hse-policy" , UserController.getHse)
 router.get("/quality-policy" , UserController.getQualityPolicy) 
 router.get("/partners" , UserController.getPartner) 
 router.get("/" , UserController.getHome ) 
+
+
+router.get('/products/:id/image' , UserController.getFullImage)
+
 module.exports = router
  
